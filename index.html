@@ -1,0 +1,1448 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rohit Mandapalli – Product Manager portfolio</title>
+<meta name="description" content="Portfolio of Rohit Mandapalli, a product manager with 12+ years' experience in regulated digital services, data products and human-in-the-loop AI.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Rohit Mandapalli – Product Manager portfolio">
+<meta property="og:description" content="Case studies in regulated digital services, data products and human-in-the-loop AI.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' text-anchor='middle' fill='%23fff'%3ERM%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.className += ' js';</script>
+<style>
+/* Black and white interface; the portrait is the only colour. Hierarchy comes from size, weight, rules and inversion. */
+:root { --ink: #000; --paper: #fff; --gutter: 1.25rem; }
+@media (prefers-color-scheme: dark) { :root { --ink: #fff; --paper: #000; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.5;
+}
+@media (min-width: 40.0625em) { body { font-size: 1.1875rem; } }
+.wrap { max-width: 60rem; margin: 0 auto; padding: 0 var(--gutter); }
+.vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.js-only { display: none !important; }
+.js .js-only { display: inline-flex !important; }
+
+/* ---------- Icons ---------- */
+.ic { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; display: inline-block; vertical-align: middle; }
+
+/* ---------- Links and focus ---------- */
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: .22em; }
+a:focus-visible { background: var(--ink); color: var(--paper); outline: 3px solid var(--ink); outline-offset: 0; text-decoration: none; }
+button:focus-visible, summary:focus-visible, input:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+summary:focus-visible { background: var(--ink); color: var(--paper); outline-offset: 0; }
+.skip { position: absolute; left: var(--gutter); top: -5rem; background: var(--ink); color: var(--paper); padding: .75rem 1rem; font-weight: 700; z-index: 70; }
+.skip:focus { top: .75rem; outline: 3px solid var(--paper); outline-offset: 0; box-shadow: 0 0 0 6px var(--ink); }
+
+/* ---------- Scroll progress ---------- */
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 5px; z-index: 40; pointer-events: none; }
+.progress span { display: block; height: 100%; background: var(--ink); transform: scaleX(0); transform-origin: left; }
+
+/* ---------- Header and navigation ---------- */
+.site-header { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 3px solid var(--ink); }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .25rem 1rem; min-height: 3.75rem; padding-top: 5px; }
+.brand { font-weight: 800; font-size: 1.125rem; letter-spacing: -.01em; text-decoration: none; padding: .35rem 0; }
+.brand:hover { text-decoration: underline; text-decoration-thickness: .15em; }
+.brand:focus-visible { padding: .35rem .5rem; margin-left: -.5rem; }
+.nav ul { display: flex; flex-wrap: wrap; gap: .125rem; list-style: none; margin: 0; padding: 0; }
+.nav a { position: relative; display: block; padding: .65rem .75rem; font-size: .9375rem; font-weight: 700; text-decoration: none; }
+.nav a::after { content: ""; position: absolute; left: .75rem; right: .75rem; bottom: .4rem; height: 3px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.nav a:hover::after { transform: scaleX(1); }
+.nav a:hover { text-decoration: none; }
+.nav a[aria-current="true"] { background: var(--ink); color: var(--paper); }
+.nav a[aria-current="true"]::after { background: var(--paper); transform: scaleX(0); }
+.nav a:focus-visible { outline-offset: 3px; background: var(--ink); color: var(--paper); }
+.nav a:focus-visible::after { display: none; }
+
+.menu-toggle { display: none; font: inherit; font-size: .9375rem; font-weight: 700; background: var(--paper); color: var(--ink); border: 2px solid var(--ink); padding: .5rem 1rem; cursor: pointer; }
+.menu-toggle:hover, .menu-toggle[aria-expanded="true"] { background: var(--ink); color: var(--paper); }
+.menu-toggle .bars { display: inline-block; width: 1em; margin-left: .5rem; vertical-align: middle; }
+.menu-toggle .bars i { display: block; height: 2px; background: currentColor; margin: 3px 0; transition: transform .25s ease, opacity .25s ease; }
+.menu-toggle[aria-expanded="true"] .bars i:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .bars i:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] .bars i:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+@media (max-width: 56em) {
+  .js .menu-toggle { display: inline-block; }
+  .js .nav { display: none; flex-basis: calc(100% + var(--gutter) * 2); margin: 0 calc(var(--gutter) * -1); border-top: 3px solid var(--ink); }
+  .js .nav.open { display: block; }
+  .js .nav ul { flex-direction: column; gap: 0; }
+  .js .nav a { padding: .95rem var(--gutter); border-bottom: 1px solid var(--ink); font-size: 1rem; }
+  .js .nav a::after { left: var(--gutter); right: var(--gutter); bottom: .55rem; }
+}
+
+/* ---------- Floating icon dock ---------- */
+.dock { position: fixed; z-index: 45; background: var(--paper); border: 2px solid var(--ink); box-shadow: 0 0 0 2px var(--paper); }
+.dock ul { list-style: none; margin: 0; padding: 0; display: flex; }
+.dock a, .dock button {
+  position: relative; display: grid; place-items: center; width: 100%; height: 2.75rem;
+  background: var(--paper); color: var(--ink); border: 0; padding: 0; margin: 0; cursor: pointer; font: inherit; text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+@media (hover: hover) { .dock a:hover, .dock button:hover { background: var(--ink); color: var(--paper); text-decoration: none; } }
+.dock a:active, .dock button:active, .dock a[aria-current="true"], .dock button[aria-expanded="true"] { background: var(--ink); color: var(--paper); }
+.dock a:focus-visible, .dock button:focus-visible { background: var(--ink); color: var(--paper); outline: 3px solid var(--ink); outline-offset: 3px; z-index: 2; }
+/* Labels: shown on hover, keyboard focus and touch */
+.dock .tip { position: absolute; background: var(--ink); color: var(--paper); padding: .3rem .6rem; font-size: .875rem; font-weight: 700; line-height: 1.3; white-space: nowrap; pointer-events: none; opacity: 0; transform: var(--from); transition: opacity .15s ease, transform .15s ease; box-shadow: 0 0 0 2px var(--paper); }
+@media (hover: hover) { .dock a:hover .tip, .dock button:hover .tip { opacity: 1; transform: var(--to); } }
+.dock a:focus-visible .tip, .dock button:focus-visible .tip, .dock a.show-tip .tip, .dock button.show-tip .tip { opacity: 1; transform: var(--to); }
+.dock.tips-off .tip, .dock button[aria-expanded="true"] .tip { opacity: 0 !important; }
+/* Wide screens: vertical dock at the right edge */
+@media (min-width: 70em) {
+  .dock { right: 1rem; top: 50%; transform: translateY(-50%); width: 2.75rem; }
+  .dock ul { flex-direction: column; }
+  .dock li + li > a, .dock li + li > button { border-top: 1px solid var(--ink); }
+  .dock .dock-sep > button { border-top: 3px solid var(--ink); }
+  .dock .tip { right: calc(100% + .75rem); top: 50%; --from: translate(8px, -50%); --to: translate(0, -50%); }
+}
+/* Narrow screens: bottom bar, labels appear above */
+@media (max-width: 69.99em) {
+  .dock { left: 50%; bottom: .5rem; transform: translateX(-50%); width: min(calc(100% - 1rem), 30rem); }
+  .dock li { flex: 1 1 0; min-width: 0; }
+  .dock li + li > a, .dock li + li > button { border-left: 1px solid var(--ink); }
+  .dock .dock-sep > button { border-left: 3px solid var(--ink); }
+  .dock .tip { bottom: calc(100% + .75rem); left: 50%; --from: translate(-50%, 6px); --to: translate(-50%, 0); }
+  .dock li:first-child .tip { left: 0; --from: translate(0, 6px); --to: translate(0, 0); }
+  .dock li:last-child .tip { left: auto; right: 0; --from: translate(0, 6px); --to: translate(0, 0); }
+  .site-footer { padding-bottom: 6rem; }
+}
+
+/* ---------- Icon tooltips ---------- */
+.icon-tip { position: fixed; z-index: 80; top: 0; left: 0; max-width: 16rem; padding: .35rem .65rem; background: var(--ink); color: var(--paper); font-size: .875rem; font-weight: 700; line-height: 1.3; box-shadow: 0 0 0 2px var(--paper); }
+.icon-tip[hidden] { display: none; }
+.stats .ic, .case-icon, .flow .ic, .skills h3 .ic, .cred h3 .ic, .link-list .ic, .callout .ic { cursor: help; }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 { line-height: 1.12; margin: 0; }
+h1 { font-size: clamp(2.25rem, 6.5vw, 3.5rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+h2 { font-size: clamp(2rem, 5.5vw, 3rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 1.5rem; }
+h3 { font-size: clamp(1.375rem, 3.5vw, 1.75rem); font-weight: 800; letter-spacing: -.01em; }
+h4 { font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; margin: 1.75rem 0 .75rem; }
+p { margin: 0 0 1.1rem; }
+.prose p, .prose li, .measure { max-width: 40rem; }
+.eyebrow { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .875rem; margin: 0 0 1.25rem; }
+.lede { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; line-height: 1.25; letter-spacing: -.01em; max-width: 36rem; margin: 1.75rem 0 .75rem; }
+.sublede { font-size: clamp(1.0625rem, 2.4vw, 1.25rem); max-width: 36rem; margin: 0; }
+.note { font-size: .9375rem; max-width: 40rem; }
+
+/* ---------- Buttons ---------- */
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.button { display: inline-flex; align-items: center; gap: .6rem; padding: .85rem 1.4rem; font: inherit; font-weight: 700; font-size: 1.0625rem; line-height: 1.2; background: var(--ink); color: var(--paper); border: 3px solid var(--ink); text-decoration: none; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.button:hover { background: var(--paper); color: var(--ink); text-decoration: none; }
+.button--secondary { background: var(--paper); color: var(--ink); }
+.button--secondary:hover { background: var(--ink); color: var(--paper); }
+.button:focus-visible { background: var(--paper); color: var(--ink); outline: 3px solid var(--ink); outline-offset: 3px; }
+.button .ic { width: 1.25rem; height: 1.25rem; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 3.5rem 0 3rem; }
+.hero-grid { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 48em) { .hero-grid { grid-template-columns: minmax(0, 1fr) 16rem; gap: 3rem; } }
+.portrait { margin: 0; order: -1; width: 10rem; border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); }
+@media (min-width: 48em) { .portrait { order: 0; width: auto; } }
+.portrait img { display: block; width: 100%; height: auto; }
+.stats { list-style: none; margin: 3rem 0 0; padding: 0; display: grid; gap: 1.5rem 1.25rem; grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr)); }
+.stats li { border-top: 5px solid var(--ink); padding-top: .75rem; }
+.stats .ic { display: block; margin-bottom: .6rem; }
+.stats strong { display: block; font-size: clamp(2.25rem, 6vw, 3.25rem); line-height: 1; letter-spacing: -.03em; font-weight: 800; margin-bottom: .5rem; }
+.stats span { display: block; font-size: .9375rem; line-height: 1.35; }
+
+/* ---------- Sections ---------- */
+.block { border-top: 5px solid var(--ink); padding: 3.5rem 0; }
+.block > .wrap > h2 .num { display: block; font-size: .875rem; letter-spacing: .12em; margin-bottom: .6rem; font-weight: 700; }
+.cols-3 { display: grid; gap: 2rem 1.5rem; }
+@media (min-width: 48em) { .cols-3 { grid-template-columns: repeat(3, 1fr); } }
+.back { margin: 2.5rem 0 0; font-size: .9375rem; font-weight: 700; }
+
+/* ---------- Process flows ---------- */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; }
+@media (min-width: 48em) { .flow { grid-auto-flow: column; grid-auto-columns: 1fr; gap: 1.75rem; } }
+.flow > li { position: relative; display: flex; flex-direction: column; gap: .35rem; padding: 1rem; border: 2px solid var(--ink); background: var(--paper); font-size: .9375rem; line-height: 1.35; }
+.flow > li strong { font-size: 1.0625rem; line-height: 1.2; }
+.flow > li .ic { width: 1.75rem; height: 1.75rem; margin-bottom: .25rem; }
+.flow > li.is-key { background: var(--ink); color: var(--paper); }
+.flow > li.is-dashed { border-style: dashed; }
+.flow > li:not(:last-child)::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid transparent; bottom: -1.2rem; left: 50%; margin-left: -.5rem; border-width: .75rem .5rem 0; border-top-color: var(--ink); }
+@media (min-width: 48em) {
+  .flow > li:not(:last-child)::after { bottom: auto; left: auto; margin-left: 0; right: -1.4rem; top: 50%; margin-top: -.5rem; border-width: .5rem 0 .5rem .75rem; border-top-color: transparent; border-left-color: var(--ink); }
+}
+
+/* ---------- Visual blocks ---------- */
+.viz { margin: 2rem 0 0; padding: 0; }
+.viz > figcaption { font-size: .8125rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .9rem; }
+.viz .viz-note { font-size: .875rem; margin: .75rem 0 0; max-width: 40rem; }
+
+.compare { display: grid; gap: .6rem; }
+.cmp { display: grid; grid-template-columns: 4.75rem 1fr; gap: 1rem; align-items: center; font-size: .9375rem; font-weight: 700; }
+.cmp-bar { display: flex; align-items: center; justify-content: flex-end; height: 2.5rem; width: var(--w); min-width: 6rem; padding: 0 .75rem; background: var(--ink); color: var(--paper); font-weight: 800; }
+.cmp.after .cmp-bar { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); }
+
+.dots-wrap { display: flex; flex-wrap: wrap; gap: 1rem 1.75rem; align-items: center; }
+.dots { display: grid; grid-template-columns: repeat(8, 1.5rem); gap: .35rem; }
+.dots i { height: 1.5rem; border: 2px solid var(--ink); }
+.dots i:first-child { background: var(--ink); }
+.dots-text { max-width: 20rem; font-size: 1rem; }
+.dots-text strong { display: block; font-size: 2rem; letter-spacing: -.02em; line-height: 1.1; }
+
+.mock-row { display: flex; flex-wrap: wrap; gap: 2rem 1.5rem; align-items: flex-start; }
+.mock { margin: 0; }
+.mock svg { display: block; width: 100%; height: auto; }
+.mock--phone { flex: 0 0 13.75rem; max-width: 100%; }
+.mock--screen { flex: 1 1 20rem; max-width: 28rem; }
+.mock figcaption { font-size: .875rem; margin-top: .6rem; font-weight: 700; }
+.m-frame { fill: var(--paper); stroke: var(--ink); stroke-width: 3; }
+.m-line { fill: none; stroke: var(--ink); stroke-width: 2; }
+.m-dash { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 5 4; }
+.m-fill { fill: var(--ink); }
+.m-paper { fill: var(--paper); }
+.m-text { fill: var(--ink); font-size: 12px; }
+.m-inv { fill: var(--paper); font-size: 12px; }
+.m-b { font-weight: 700; }
+
+.gantt { list-style: none; margin: 0; padding: 0; }
+.gantt li { padding: .4rem 0; }
+.g-label { display: block; font-size: .9375rem; margin-bottom: .25rem; }
+.g-track { position: relative; display: block; height: 1rem; border-bottom: 1px solid var(--ink); }
+.g-bar { position: absolute; top: 0; bottom: 0; background: var(--ink); }
+.g-bar.is-edu { background: var(--paper); border: 2px solid var(--ink); }
+.g-axis { position: relative; height: 1.75rem; margin-top: .25rem; border-top: 2px solid var(--ink); font-size: .8125rem; font-weight: 700; }
+.g-axis span { position: absolute; top: .3rem; transform: translateX(-50%); }
+.g-axis span:first-child { transform: none; }
+
+/* ---------- Status tags ---------- */
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 .75rem; padding: 0; list-style: none; }
+.tag { display: inline-block; border: 2px solid var(--ink); padding: .15rem .55rem; font-size: .8125rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; line-height: 1.4; }
+.tag--solid { background: var(--ink); color: var(--paper); }
+.tag--dashed { border-style: dashed; }
+.key { margin: 1.5rem 0 0; display: grid; gap: .75rem 2rem; }
+@media (min-width: 48em) { .key { grid-template-columns: 1fr 1fr; } }
+.key div { display: flex; gap: .75rem; align-items: baseline; }
+.key dt { flex: 0 0 12rem; display: flex; flex-wrap: wrap; gap: .35rem; }
+.key dd { margin: 0; font-size: .9375rem; }
+@media (max-width: 40em) { .key div { flex-direction: column; gap: .4rem; } .key dt { flex-basis: auto; } }
+
+.case-index { list-style: none; margin: 2rem 0 0; padding: 0; border-top: 2px solid var(--ink); counter-reset: ci; }
+.case-index li { border-bottom: 2px solid var(--ink); counter-increment: ci; }
+.case-index a { display: flex; align-items: baseline; gap: 1rem; padding: .85rem .5rem; font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease, padding-left .2s ease; }
+.case-index a::before { content: counter(ci, decimal-leading-zero); font-size: .875rem; letter-spacing: .1em; min-width: 1.75rem; }
+.case-index .ci-text { flex: 1; }
+.case-index a::after { content: "↓"; transition: transform .2s ease; }
+.case-index a:hover { background: var(--ink); color: var(--paper); padding-left: 1.25rem; text-decoration: none; }
+.case-index a:hover::after { transform: translateY(3px); }
+.case-index .where { font-weight: 400; font-size: .9375rem; }
+
+/* ---------- Case studies ---------- */
+.case { border: 3px solid var(--ink); padding: 1.5rem 1.25rem; margin-top: 3rem; }
+@media (min-width: 40.0625em) { .case { padding: 2rem; } }
+.case-head { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+.case-icon { flex: none; display: grid; place-items: center; width: 3.25rem; height: 3.25rem; background: var(--ink); color: var(--paper); }
+.case-icon .ic { width: 1.75rem; height: 1.75rem; }
+@media (max-width: 40em) { .case-icon { width: 2.75rem; height: 2.75rem; } .case-icon .ic { width: 1.5rem; height: 1.5rem; } }
+.headline { font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin: .6rem 0 0; max-width: 36rem; }
+.facts { margin: 0 0 1.5rem; border-top: 1px solid var(--ink); }
+.facts div { display: grid; gap: .15rem 1.5rem; padding: .6rem 0; border-bottom: 1px solid var(--ink); }
+@media (min-width: 40.0625em) { .facts div { grid-template-columns: 7rem 1fr; } }
+.facts dt { font-weight: 800; }
+.facts dd { margin: 0; max-width: 40rem; }
+.metrics { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); }
+.metrics li { border-left: 6px solid var(--ink); padding: .1rem 0 .1rem 1rem; font-size: .9375rem; line-height: 1.35; }
+.metrics strong { display: block; font-size: 2.25rem; font-weight: 800; line-height: 1.05; letter-spacing: -.03em; }
+.case ul.list { margin: 0; padding-left: 1.25rem; }
+.case ul.list li { margin-bottom: .6rem; max-width: 40rem; }
+.case ul.list li::marker { font-weight: 800; }
+.callout { display: flex; gap: .85rem; border-left: 6px solid var(--ink); padding: .25rem 0 .25rem 1rem; margin: 1.5rem 0 0; max-width: 40rem; }
+.callout p { margin: 0; font-size: 1rem; }
+.case .back { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--ink); }
+details { margin-top: 1.25rem; max-width: 40rem; }
+summary { cursor: pointer; font-weight: 700; text-decoration: underline; text-underline-offset: .18em; }
+summary:hover { text-decoration-thickness: .2em; }
+details[open] > summary { margin-bottom: .75rem; }
+details > div { border-left: 6px solid var(--ink); padding: .25rem 0 .25rem 1rem; font-size: 1rem; }
+details > div p:last-child { margin-bottom: 0; }
+
+.minis { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
+@media (min-width: 48em) { .minis { grid-template-columns: 1fr 1fr; } }
+.mini { border: 2px solid var(--ink); padding: 1.25rem; }
+.mini h4 { font-size: 1.1875rem; text-transform: none; letter-spacing: 0; margin: 0 0 .5rem; }
+.mini p { font-size: 1rem; margin: 0; }
+.mini .tags { margin-bottom: .75rem; }
+
+/* ---------- Experience, skills, credentials ---------- */
+.timeline { list-style: none; margin: 2.5rem 0 0; padding: 0; }
+.timeline > li { display: grid; gap: .5rem 2rem; padding: 1.5rem 0; border-top: 2px solid var(--ink); }
+.timeline > li:last-child { border-bottom: 2px solid var(--ink); }
+@media (min-width: 48em) { .timeline > li { grid-template-columns: 11rem 1fr; } }
+.timeline .when { font-weight: 800; }
+.timeline h3 { font-size: 1.375rem; margin-bottom: .4rem; }
+.timeline p { margin: 0; max-width: 40rem; }
+
+.skills { display: grid; gap: 2rem 2.5rem; }
+@media (min-width: 48em) { .skills { grid-template-columns: 1fr 1fr; } }
+.skills h3, .cred h3 { display: flex; align-items: center; gap: .65rem; font-size: 1.25rem; margin-bottom: .75rem; padding-bottom: .5rem; border-bottom: 3px solid var(--ink); }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.chips li { border: 1px solid var(--ink); padding: .2rem .6rem; font-size: .9375rem; line-height: 1.4; transition: background .15s ease, color .15s ease; }
+.chips li:hover { background: var(--ink); color: var(--paper); }
+.plain { list-style: none; margin: 0; padding: 0; }
+.plain li { padding: .6rem 0; border-top: 1px solid var(--ink); }
+.plain li:last-child { border-bottom: 1px solid var(--ink); }
+.plain .small { display: block; font-size: .9375rem; }
+
+.link-list { list-style: none; margin: 0; padding: 0; max-width: 40rem; }
+.link-list li { display: flex; gap: .85rem; align-items: baseline; padding: .75rem 0; border-top: 1px solid var(--ink); }
+.link-list li:last-child { border-bottom: 1px solid var(--ink); }
+.link-list .ic { transform: translateY(.3rem); }
+.email-link { font-size: clamp(1.4rem, 5vw, 2.25rem); font-weight: 800; letter-spacing: -.02em; word-break: break-word; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--ink); color: var(--paper); padding: 2.5rem 0 3rem; }
+.site-footer a { color: var(--paper); }
+.site-footer a:focus-visible { background: var(--paper); color: var(--ink); outline-color: var(--paper); }
+.site-footer h2 { font-size: 1.5rem; margin-bottom: 1rem; letter-spacing: -.01em; }
+.site-footer p { max-width: 40rem; font-size: 1rem; }
+.footer-links { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: 2rem 0 0; padding: 1.25rem 0 0; border-top: 2px solid var(--paper); }
+
+/* ---------- Chat ---------- */
+.chat { position: fixed; z-index: 60; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--ink), 0 0 0 3px var(--paper); }
+.chat[hidden] { display: none; }
+@media (min-width: 70em) { .chat { right: 5.25rem; bottom: 1.5rem; width: 26rem; max-height: min(40rem, calc(100vh - 7rem)); } }
+@media (max-width: 69.99em) { .chat { right: .5rem; bottom: 4.9rem; width: min(30rem, calc(100% - 1rem)); max-height: calc(100vh - 8.5rem); max-height: calc(100dvh - 8.5rem); } }
+.chat-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .75rem 1rem; background: var(--ink); color: var(--paper); }
+.chat-head h2 { margin: 0; font-size: 1.0625rem; letter-spacing: 0; display: flex; align-items: center; gap: .6rem; }
+.chat-close { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; background: var(--ink); color: var(--paper); border: 2px solid var(--paper); cursor: pointer; padding: 0; }
+.chat-close:hover { background: var(--paper); color: var(--ink); }
+.chat-close:focus-visible { outline: 3px solid var(--paper); outline-offset: 2px; }
+.chat-note { margin: 0; padding: .6rem 1rem; font-size: .8125rem; line-height: 1.35; border-bottom: 2px solid var(--ink); }
+.chat-log { flex: 1 1 auto; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; min-height: 8rem; }
+.msg { max-width: 92%; padding: .6rem .8rem; border: 2px solid var(--ink); font-size: .9375rem; line-height: 1.45; }
+.msg p { margin: 0; }
+.msg a { font-weight: 700; }
+.msg .see { display: block; margin-top: .5rem; font-size: .875rem; }
+.msg.bot { align-self: flex-start; }
+.msg.me { align-self: flex-end; background: var(--ink); color: var(--paper); }
+.msg.typing { font-weight: 800; letter-spacing: .2em; }
+.chat-chips { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0 1rem .75rem; }
+.chat-chips button { font: inherit; font-size: .8125rem; font-weight: 700; line-height: 1.25; text-align: left; padding: .4rem .65rem; background: var(--paper); color: var(--ink); border: 2px solid var(--ink); cursor: pointer; transition: background .15s ease, color .15s ease; }
+.chat-chips button:hover { background: var(--ink); color: var(--paper); }
+.chat-form { display: flex; border-top: 3px solid var(--ink); }
+.chat-form input { flex: 1; min-width: 0; font: inherit; font-size: 1rem; padding: .85rem 1rem; border: 0; background: var(--paper); color: var(--ink); border-radius: 0; }
+.chat-form input:focus-visible { outline: 3px solid var(--ink); outline-offset: -6px; }
+.chat-send { display: grid; place-items: center; width: 3.25rem; background: var(--ink); color: var(--paper); border: 0; border-left: 3px solid var(--ink); cursor: pointer; }
+.chat-send:hover { background: var(--paper); color: var(--ink); }
+.chat-send:focus-visible { outline: 3px solid var(--ink); outline-offset: -6px; background: var(--paper); color: var(--ink); }
+.chat-foot { margin: 0; padding: .45rem 1rem; font-size: .75rem; border-top: 1px solid var(--ink); }
+
+/* ---------- Print ---------- */
+@media print {
+  :root { --ink: #000; --paper: #fff; }
+  .site-header, .progress, .skip, .actions, .case-index, .back, .dock, .chat, .js-only { display: none !important; }
+  body { font-size: 11pt; }
+  html { scroll-padding-top: 0; }
+  .block { padding: 1.5rem 0; }
+  .case, .mini, .flow > li, .viz { break-inside: avoid; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; word-break: break-all; }
+  .site-footer { background: #fff; color: #000; border-top: 3px solid #000; }
+  .site-footer a { color: #000; }
+}
+</style>
+</head>
+<body id="top">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m22 4-10 10-3-3"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.5a2 2 0 0 1-.2.9L4.7 20.5a1 1 0 0 0 .9 1.5h12.8a1 1 0 0 0 .9-1.5l-5.1-10.1a2 2 0 0 1-.2-.9V2"/><path d="M8.5 2h7M7 16h10"/></symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M2 10l10-7 10 7z"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></symbol>
+    <symbol id="i-trending" viewBox="0 0 24 24"><path d="m23 6-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 1 4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="m7 23-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2-6.2 3.2L7 14.2 2 9.3l6.9-1z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to main content</a>
+<div class="progress" aria-hidden="true"><span id="bar"></span></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Rohit Mandapalli</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu<span class="bars" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#case-studies">Case studies</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="intro" aria-labelledby="page-title">
+    <div class="wrap">
+      <div class="hero-grid">
+      <div class="hero-text">
+      <p class="eyebrow">Product Manager · United Kingdom</p>
+      <h1 id="page-title">Rohit Mandapalli</h1>
+      <p class="lede">Turning complex, regulated services into products people use.</p>
+      <p class="sublede">12+ years across UK government, life sciences, retail and enterprise platforms, with a focus on human-in-the-loop AI.</p>
+      <div class="actions">
+        <a class="button" href="#case-studies"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg>Case studies</a>
+        <button class="button button--secondary js-only" type="button" data-open-chat><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>Ask about Rohit's experience</button>
+        <a class="button button--secondary" href="#contact"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Contact</a>
+      </div>
+      </div>
+      <figure class="portrait"><img src="assets/portrait.jpg" width="600" height="750" alt="Portrait of Rohit Mandapalli"></figure>
+      </div>
+      <ul class="stats" aria-label="Key figures">
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><strong>12+</strong><span>years delivering digital products and services</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><strong>4,000+</strong><span>users of an ML-assisted platform taken from idea to launch</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trending"/></svg><strong>~$2M</strong><span>annual savings from that platform</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><strong>2 days</strong><span>processing time on a UK government service, down from around 10</span></li>
+      </ul>
+      <p class="note" style="margin-top:1.5rem">Figures from client delivery work. Money in US dollars.</p>
+    </div>
+  </section>
+
+  <section class="block" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <h2 id="about-title"><span class="num" aria-hidden="true">01</span>About</h2>
+      <div class="prose">
+        <p><strong>Lead Product Manager, Cognizant Technology Solutions.</strong></p>
+        <p>Takes products from first discovery to launch and adoption, in settings where safety, accessibility and audit matter.</p>
+        <p>Engineer turned product leader: automotive R&amp;D, an MBA from IIM Lucknow, then ten years of consulting-led product delivery across life sciences, government, retail, healthcare and logistics.</p>
+      </div>
+
+      <h3 style="margin: 2.5rem 0 1.25rem">How a project runs</h3>
+      <ol class="flow">
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><strong>Discover</strong><span>Interview users. Map the process end to end.</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-target"/></svg><strong>Define</strong><span>Agree MVP scope, thresholds and success measures first.</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><strong>Deliver</strong><span>Work with design, engineering and testing. Accessible by default.</span></li>
+        <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><strong>Adopt</strong><span>Train users. Track results. Keep humans in charge of high-risk decisions.</span></li>
+      </ol>
+      <p class="back"><a href="#top">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="case-studies" aria-labelledby="cases-title">
+    <div class="wrap">
+      <h2 id="cases-title"><span class="num" aria-hidden="true">02</span>Case studies</h2>
+      <p class="measure">Seven projects, each labelled by how far the work got.</p>
+      <dl class="key">
+        <div><dt><span class="tag tag--solid">Client delivery</span></dt><dd>Built and launched for a client.</dd></div>
+        <div><dt><span class="tag">Discovery</span> <span class="tag">Alpha</span></dt><dd>Research and testing before build, following the GDS phases.</dd></div>
+        <div><dt><span class="tag tag--dashed">POC</span> <span class="tag tag--dashed">Prototype</span></dt><dd>A working demonstration, not a live service.</dd></div>
+        <div><dt><span class="tag tag--dashed">Proposal</span> <span class="tag tag--dashed">Concept</span></dt><dd>An idea or pitch that was not built.</dd></div>
+      </dl>
+
+      <ol class="case-index" id="case-list" aria-label="Case study index">
+        <li><a href="#cs-ml"><span class="ci-text">ML-assisted clinical document authoring <span class="where">· Life sciences</span></span></a></li>
+        <li><a href="#cs-ops"><span class="ci-text">Digital operations and cost-management service <span class="where">· UK government</span></span></a></li>
+        <li><a href="#cs-regulator"><span class="ci-text">AI-assisted review, access and sign-in discovery <span class="where">· UK regulator</span></span></a></li>
+        <li><a href="#cs-tax"><span class="ci-text">Valuation platform modernisation <span class="where">· UK tax authority</span></span></a></li>
+        <li><a href="#cs-data"><span class="ci-text">Customer data platform migration <span class="where">· UK retail</span></span></a></li>
+        <li><a href="#cs-bille"><span class="ci-text">Bille the Goat <span class="where">· Personal prototype</span></span></a></li>
+        <li><a href="#cs-commercial"><span class="ci-text">Proposals, bids and commercial strategy <span class="where">· Consulting</span></span></a></li>
+      </ol>
+
+      <!-- 1 ML authoring -->
+      <article class="case" id="cs-ml" aria-labelledby="cs-ml-title">
+        <header class="case-head">
+          <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-flask"/></svg></span>
+          <div>
+            <ul class="tags"><li class="tag tag--solid">Client delivery</li><li class="tag">Life sciences</li></ul>
+            <h3 id="cs-ml-title">ML-assisted clinical document authoring</h3>
+            <p class="headline">Cut document turnaround by 80% with ML drafting and human sign-off.</p>
+          </div>
+        </header>
+        <dl class="facts">
+          <div><dt>Client</dt><dd>Global pharmaceutical organisation</dd></div>
+          <div><dt>Role</dt><dd>Product lead. Found the need, set the vision and MVP, and briefed the ML engineers who built it on IBM Watson.</dd></div>
+          <div><dt>Users</dt><dd>4,000+ scientific, clinical and regulatory staff</dd></div>
+        </dl>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>80%</strong>faster document turnaround</li>
+          <li><strong>~$2M</strong>annual savings</li>
+          <li><strong>80–90%</strong>model accuracy at launch</li>
+        </ul>
+        <figure class="viz">
+          <figcaption>Time per document cycle</figcaption>
+          <div class="compare" role="group" aria-label="Before and after">
+            <div class="cmp"><span>Before</span><span class="cmp-bar" style="--w:100%">~40 hours</span></div>
+            <div class="cmp after"><span>After</span><span class="cmp-bar" style="--w:20%">~8 hours</span></div>
+          </div>
+        </figure>
+        <figure class="viz">
+          <figcaption>How the platform works</figcaption>
+          <ol class="flow">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><strong>Research</strong><span>Sources gathered automatically</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cpu"/></svg><strong>Draft</strong><span>ML drafts each document section</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-flag"/></svg><strong>Flag</strong><span>Uncertain parts flagged for review</span></li>
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><strong>Human sign-off</strong><span>Experts review and decide</span></li>
+          </ol>
+        </figure>
+        <h4>What was done</h4>
+        <ul class="list">
+          <li>Mapped the manual, email-based authoring process with medical writers and regulatory teams.</li>
+          <li>Set MVP scope, accuracy thresholds, confidence levels and review rules.</li>
+          <li>Briefed ML engineers on training data, draft logic and when to flag a result.</li>
+          <li>Drove adoption with demos and training in plain language.</li>
+        </ul>
+        <div class="callout"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg><p><strong>Principle.</strong> Automate the repetitive. Flag uncertainty. Humans decide high-risk calls.</p></div>
+        <details>
+          <summary>How the figures were measured</summary>
+          <div>
+            <p><strong>Turnaround.</strong> Manual research and writing replaced by automated drafting. The 8 hours is review and sign-off.</p>
+            <p><strong>Savings.</strong> Hours saved across 4,000 writers and scientists, multiplied by hourly cost, including time lost to human error.</p>
+            <p><strong>Accuracy.</strong> Machine output compared with human-written reports, section by section. It measures output quality, not ML engineering.</p>
+          </div>
+        </details>
+        <details>
+          <summary>If rebuilt today</summary>
+          <div><p>Hindsight, not part of the delivery: retrieval from approved sources, traceable citations, hallucination checks, source-grounding scores and reviewer-override metrics.</p></div>
+        </details>
+        <p class="back"><a href="#case-list">Back to case study list</a></p>
+      </article>
+
+      <!-- 2 Ops -->
+      <article class="case" id="cs-ops" aria-labelledby="cs-ops-title">
+        <header class="case-head">
+          <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-landmark"/></svg></span>
+          <div>
+            <ul class="tags"><li class="tag tag--solid">Client delivery</li><li class="tag">UK public sector</li></ul>
+            <h3 id="cs-ops-title">Digital operations and cost-management service</h3>
+            <p class="headline">Paper to digital: processing time down from around 10 days to 2.</p>
+          </div>
+        </header>
+        <dl class="facts">
+          <div><dt>Client</dt><dd>UK government agency</dd></div>
+          <div><dt>Role</dt><dd>Directed product strategy, service design and delivery, from discovery to adoption.</dd></div>
+          <div><dt>Team</dt><dd>12 people across design, research, development, analysis, testing and architecture</dd></div>
+          <div><dt>Standards</dt><dd>GDS and WCAG</dd></div>
+        </dl>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>~90%</strong>of manual processes automated</li>
+          <li><strong>~90%</strong>fewer errors and backdated corrections</li>
+          <li><strong>12</strong>people in the multidisciplinary team led</li>
+        </ul>
+        <figure class="viz">
+          <figcaption>End-to-end processing time</figcaption>
+          <div class="compare" role="group" aria-label="Before and after">
+            <div class="cmp"><span>Before</span><span class="cmp-bar" style="--w:100%">~10 days</span></div>
+            <div class="cmp after"><span>After</span><span class="cmp-bar" style="--w:20%">2 days</span></div>
+          </div>
+        </figure>
+        <figure class="viz">
+          <figcaption>Two experiences, one service</figcaption>
+          <div class="mock-row">
+            <figure class="mock mock--phone">
+              <svg viewBox="0 0 220 380" role="img" aria-labelledby="mk-phone-t">
+                <title id="mk-phone-t">Wireframe of a mobile logging screen: activity type, date, scan document and a save button</title>
+                <rect class="m-frame" x="3" y="3" width="214" height="374" rx="24"/>
+                <rect class="m-line" x="82" y="13" width="56" height="6" rx="3"/>
+                <rect class="m-fill" x="3" y="32" width="214" height="44"/>
+                <text class="m-inv m-b" x="18" y="60" style="font-size:15px">Log activity</text>
+                <text class="m-text m-b" x="18" y="102">Activity type</text>
+                <rect class="m-line" x="18" y="109" width="184" height="34"/>
+                <text class="m-text" x="28" y="131">Select…</text>
+                <path class="m-line" d="m178 123 6 6 6-6"/>
+                <text class="m-text m-b" x="18" y="166">Date</text>
+                <rect class="m-line" x="18" y="173" width="184" height="34"/>
+                <text class="m-text" x="28" y="195">Today</text>
+                <rect class="m-dash" x="18" y="222" width="184" height="62"/>
+                <text class="m-text m-b" x="110" y="258" text-anchor="middle">Scan document</text>
+                <rect class="m-fill" x="18" y="308" width="184" height="44"/>
+                <text class="m-inv m-b" x="110" y="335" text-anchor="middle" style="font-size:14px">Save entry</text>
+              </svg>
+              <figcaption>Frontline: simple, mobile-first</figcaption>
+            </figure>
+            <figure class="mock mock--screen">
+              <svg viewBox="0 0 440 300" role="img" aria-labelledby="mk-admin-t">
+                <title id="mk-admin-t">Wireframe of an administrator screen: an approvals table with status and approve buttons, an audit history panel and a cost summary with an invoice button</title>
+                <rect class="m-frame" x="3" y="3" width="434" height="294" rx="6"/>
+                <rect class="m-fill" x="3" y="3" width="434" height="36" rx="4"/>
+                <text class="m-inv m-b" x="18" y="27" style="font-size:14px">Approvals</text>
+                <text class="m-inv" x="422" y="26" text-anchor="end">Audit · Reports · Costs</text>
+                <text class="m-text m-b" x="18" y="62">Activity</text><text class="m-text m-b" x="150" y="62">Date</text><text class="m-text m-b" x="225" y="62">Cost</text><text class="m-text m-b" x="290" y="62">Status</text>
+                <path class="m-line" d="M18 69h404"/>
+                <rect class="m-fill" x="18" y="82" width="90" height="8"/><rect class="m-fill" x="150" y="82" width="46" height="8"/><rect class="m-fill" x="225" y="82" width="36" height="8"/>
+                <rect class="m-line" x="290" y="76" width="62" height="20"/><text class="m-text" x="321" y="90" text-anchor="middle" style="font-size:11px">Pending</text>
+                <rect class="m-fill" x="366" y="76" width="56" height="20"/><text class="m-inv m-b" x="394" y="90" text-anchor="middle" style="font-size:11px">Approve</text>
+                <path class="m-line" d="M18 106h404"/>
+                <rect class="m-fill" x="18" y="118" width="70" height="8"/><rect class="m-fill" x="150" y="118" width="46" height="8"/><rect class="m-fill" x="225" y="118" width="44" height="8"/>
+                <rect class="m-line" x="290" y="112" width="62" height="20"/><text class="m-text" x="321" y="126" text-anchor="middle" style="font-size:11px">Pending</text>
+                <rect class="m-fill" x="366" y="112" width="56" height="20"/><text class="m-inv m-b" x="394" y="126" text-anchor="middle" style="font-size:11px">Approve</text>
+                <path class="m-line" d="M18 142h404"/>
+                <rect class="m-fill" x="18" y="154" width="80" height="8"/><rect class="m-fill" x="150" y="154" width="46" height="8"/><rect class="m-fill" x="225" y="154" width="30" height="8"/>
+                <rect class="m-fill" x="290" y="148" width="62" height="20"/><text class="m-inv m-b" x="321" y="162" text-anchor="middle" style="font-size:11px">Approved</text>
+                <path class="m-line" d="M18 178h404"/>
+                <rect class="m-line" x="18" y="196" width="190" height="86"/>
+                <text class="m-text m-b" x="28" y="214">Audit history</text>
+                <circle class="m-fill" cx="34" cy="231" r="4"/><rect class="m-fill" x="46" y="228" width="110" height="6"/>
+                <circle class="m-fill" cx="34" cy="249" r="4"/><rect class="m-fill" x="46" y="246" width="84" height="6"/>
+                <circle class="m-fill" cx="34" cy="267" r="4"/><rect class="m-fill" x="46" y="264" width="98" height="6"/>
+                <rect class="m-line" x="228" y="196" width="194" height="86"/>
+                <text class="m-text m-b" x="238" y="214">Cost summary</text>
+                <rect class="m-fill" x="238" y="224" width="120" height="6"/><rect class="m-fill" x="238" y="238" width="90" height="6"/>
+                <rect class="m-fill" x="238" y="254" width="100" height="20"/><text class="m-inv m-b" x="288" y="268" text-anchor="middle" style="font-size:11px">Create invoice</text>
+              </svg>
+              <figcaption>Administrators: oversight, audit, costs</figcaption>
+            </figure>
+          </div>
+          <p class="viz-note">Illustrative wireframes of the two experiences, not the real screens.</p>
+        </figure>
+        <h4>What was done</h4>
+        <ul class="list">
+          <li>Replaced paper records, email approvals and manual reconciliation with one service.</li>
+          <li>Ran workshops with frontline and admin staff to map pain points and control gaps, then prioritised the MVP.</li>
+          <li>Added structured logging so costs flow into invoices and every action is traceable.</li>
+          <li>Guided OCR to capture data from paper documents, cutting manual entry.</li>
+        </ul>
+        <details>
+          <summary>How the figures were measured</summary>
+          <div><p><strong>Processing time.</strong> Automated approval checks removed the bottleneck.</p><p><strong>Automation and errors.</strong> Onboarding details captured automatically with few corrections. Stated as approximately 90%, never zero errors.</p></div>
+        </details>
+        <p class="back"><a href="#case-list">Back to case study list</a></p>
+      </article>
+
+      <!-- 3 Regulator -->
+      <article class="case" id="cs-regulator" aria-labelledby="cs-reg-title">
+        <header class="case-head">
+          <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-shield"/></svg></span>
+          <div>
+            <ul class="tags"><li class="tag">Discovery</li><li class="tag">Alpha</li><li class="tag">UK public sector</li></ul>
+            <h3 id="cs-reg-title">AI-assisted review, access and sign-in discovery</h3>
+            <p class="headline">Testing whether AI can safely widen review beyond 1 in 40 submissions.</p>
+          </div>
+        </header>
+        <dl class="facts">
+          <div><dt>Client</dt><dd>UK professional regulator</dd></div>
+          <div><dt>Role</dt><dd>Led product discovery. Supported the move into Alpha.</dd></div>
+          <div><dt>Scale</dt><dd>About 100,000 users and 200,000 submissions a year</dd></div>
+          <div><dt>Status</dt><dd>Not a live service. Discovery and Alpha only, so there are no production results to report.</dd></div>
+        </dl>
+        <figure class="viz">
+          <figcaption>Reviewed by hand today</figcaption>
+          <div class="dots-wrap">
+            <div class="dots" role="img" aria-label="40 squares with 1 filled, showing about 1 in 40 submissions reviewed by hand"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <p class="dots-text"><strong>About 2.5%</strong>of submissions get a manual review. The question: can AI extend coverage safely, with proportionate human oversight?</p>
+          </div>
+        </figure>
+        <figure class="viz">
+          <figcaption>Where the work got to</figcaption>
+          <ol class="flow">
+            <li class="is-key"><strong>Discovery</strong><span>Led</span></li>
+            <li class="is-key"><strong>Alpha</strong><span>Supported</span></li>
+            <li class="is-dashed"><strong>Beta</strong><span>Future phase</span></li>
+            <li class="is-dashed"><strong>Live</strong><span>Future phase</span></li>
+          </ol>
+        </figure>
+        <h4>AI-assisted review</h4>
+        <ul class="list">
+          <li>Mapped the service, user needs and comparators. Produced the Alpha plan and a future-state blueprint.</li>
+          <li>Found a light-touch reflective check, not hard-evidence verification. AI is therefore judged on reflection quality, reviewer consistency, feedback quality and handling of uncertainty.</li>
+          <li>In Alpha: reviewer workshops, prompt packs, guardrails, and when retrieval (RAG) beats a standalone LLM.</li>
+        </ul>
+        <h4>Related discovery, same regulator</h4>
+        <ul class="list">
+          <li><strong>Access control.</strong> Reviewed staff access to regulated data, found governance gaps, recommended a role-based model.</li>
+          <li><strong>Multi-factor authentication.</strong> Compared text codes, authenticator apps, GOV.UK One Login, passwordless email links and third-party sign-in on security, accessibility, cost and support impact.</li>
+        </ul>
+        <p class="back"><a href="#case-list">Back to case study list</a></p>
+      </article>
+
+      <!-- 4 Tax -->
+      <article class="case" id="cs-tax" aria-labelledby="cs-tax-title">
+        <header class="case-head">
+          <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-cloud"/></svg></span>
+          <div>
+            <ul class="tags"><li class="tag tag--solid">Client delivery</li><li class="tag">UK public sector</li></ul>
+            <h3 id="cs-tax-title">Valuation platform modernisation</h3>
+            <p class="headline">Excel and SQL replaced by Azure and Dynamics 365 for 1,000+ valuers.</p>
+          </div>
+        </header>
+        <dl class="facts">
+          <div><dt>Client</dt><dd>UK tax authority</dd></div>
+          <div><dt>Role</dt><dd>Product owner for the quality-control workstream (validation and submission review), not the whole programme.</dd></div>
+          <div><dt>Scale</dt><dd>1,000+ valuers. Two cross-functional teams of 8.</dd></div>
+        </dl>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>~30%</strong>less operational redundancy</li>
+          <li><strong>~80%</strong>efficiency gains from low-code</li>
+          <li><strong>90%</strong>of solutions delivered no-code</li>
+        </ul>
+        <figure class="viz">
+          <figcaption>From legacy to platform</figcaption>
+          <ol class="flow">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><strong>Before</strong><span>Excel and SQL-based legacy processes</span></li>
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cloud"/></svg><strong>Azure and Dynamics 365</strong><span>Validation and submission review for 1,000+ valuers</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg><strong>PowerApps</strong><span>Out-of-the-box features, minimal code</span></li>
+          </ol>
+        </figure>
+        <h4>What was done</h4>
+        <ul class="list">
+          <li>Refined backlogs and aligned priorities across two teams.</li>
+          <li>Turned complex business processes into user stories and acceptance criteria.</li>
+          <li>Improved speed, reliability and maintainability over the legacy approach.</li>
+        </ul>
+        <p class="back"><a href="#case-list">Back to case study list</a></p>
+      </article>
+
+      <!-- 5 Retail -->
+      <article class="case" id="cs-data" aria-labelledby="cs-data-title">
+        <header class="case-head">
+          <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-cart"/></svg></span>
+          <div>
+            <ul class="tags"><li class="tag tag--solid">Client delivery</li><li class="tag">Retail</li></ul>
+            <h3 id="cs-data-title">Customer data platform migration</h3>
+            <p class="headline">20M+ records moved to the cloud with 25% better migration accuracy.</p>
+          </div>
+        </header>
+        <dl class="facts">
+          <div><dt>Client</dt><dd>UK retailer</dd></div>
+          <div><dt>Role</dt><dd>Wrote the modernisation roadmap. Scoped and managed migration requirements.</dd></div>
+          <div><dt>Scale</dt><dd>20M+ customer records</dd></div>
+        </dl>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>25%</strong>better migration accuracy</li>
+          <li><strong>15%</strong>redundant data found, cutting storage and migration cost</li>
+        </ul>
+        <figure class="viz">
+          <figcaption>From records to personalisation</figcaption>
+          <ol class="flow">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-database"/></svg><strong>20M+ records</strong><span>On physical servers</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><strong>Catalogue</strong><span>15% redundant data found</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><strong>Validate</strong><span>Quality controls, +25% accuracy</span></li>
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cloud"/></svg><strong>Azure cloud</strong><span>Ready for analytics</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><strong>Use</strong><span>Segmentation, personalisation, retargeting</span></li>
+          </ol>
+        </figure>
+        <h4>What was done</h4>
+        <ul class="list">
+          <li>Guided migration and transformation logic so data was ready for segmentation and personalisation.</li>
+          <li>Supported retargeting across app and email, using behavioural signals to recover abandoned baskets.</li>
+          <li>Helped lay the foundation for unified customer profiles and analytics-led marketing.</li>
+        </ul>
+        <p class="back"><a href="#case-list">Back to case study list</a></p>
+      </article>
+
+      <!-- 6 Bille -->
+      <article class="case" id="cs-bille" aria-labelledby="cs-bille-title">
+        <header class="case-head">
+          <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-file"/></svg></span>
+          <div>
+            <ul class="tags"><li class="tag tag--dashed">Prototype</li><li class="tag">Personal project</li></ul>
+            <h3 id="cs-bille-title">Bille the Goat</h3>
+            <p class="headline">From idea to a working GenAI app, built by prompting.</p>
+          </div>
+        </header>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Product owner and builder. Made in Lovable through prompting and refining, not hand-coding.</dd></div>
+          <div><dt>Try it</dt><dd><a href="https://billethegoat.lovable.app">billethegoat.lovable.app</a></dd></div>
+        </dl>
+        <figure class="viz">
+          <figcaption>Receipt management concept</figcaption>
+          <ol class="flow">
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><strong>Capture</strong><span>Scan, email, download or retailer app</span></li>
+            <li class="is-dashed"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><strong>Extract</strong><span>OCR of items, prices, dates, retailers</span></li>
+            <li class="is-dashed"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-database"/></svg><strong>Library</strong><span>Search purchases in plain English</span></li>
+            <li class="is-dashed"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trending"/></svg><strong>Insights</strong><span>Budgets, return and warranty reminders</span></li>
+          </ol>
+          <p class="viz-note">Dashed steps are designed capabilities. They are concepts, not all built.</p>
+        </figure>
+        <h4>What was done</h4>
+        <ul class="list">
+          <li>Turned user journeys into a working app through repeated prompting, testing and refinement.</li>
+          <li><strong>Key insight:</strong> capture is the adoption bottleneck. If getting receipts in is hard, nothing else matters.</li>
+        </ul>
+        <div class="callout"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-flag"/></svg><p>A prototype to test product thinking quickly. Not enterprise software, and not a substitute for engineering.</p></div>
+        <p class="back"><a href="#case-list">Back to case study list</a></p>
+      </article>
+
+      <!-- 7 Commercial -->
+      <article class="case" id="cs-commercial" aria-labelledby="cs-com-title">
+        <header class="case-head">
+          <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-trending"/></svg></span>
+          <div>
+            <ul class="tags"><li class="tag">Consulting</li><li class="tag">Commercial</li></ul>
+            <h3 id="cs-com-title">Proposals, bids and commercial strategy</h3>
+            <p class="headline">$50M+ of bids coordinated. $18M of wins supported.</p>
+          </div>
+        </header>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>$50M+</strong>of RFP and proposal responses, with teams of up to 25</li>
+          <li><strong>$18M</strong>of life sciences wins supported in one quarter</li>
+          <li><strong>~$400K</strong>pipeline from a digital maturity tool (3 client leads in a year)</li>
+        </ul>
+        <figure class="viz">
+          <figcaption>How a bid comes together</figcaption>
+          <ol class="flow">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><strong>Brief</strong><span>Client need and RFP</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-target"/></svg><strong>Proposition</strong><span>Value story and delivery approach</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><strong>Team</strong><span>Cross-functional, up to 25 people</span></li>
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-award"/></svg><strong>Decision</strong><span>Client award</span></li>
+          </ol>
+        </figure>
+        <h4>What was done</h4>
+        <ul class="list">
+          <li>Directed proposal workstreams and shaped propositions, value narratives and delivery approaches.</li>
+          <li>Positioned data, AI and disease-management solutions for life sciences clients.</li>
+          <li>Created a tool that scores digital maturity, from automation to AI.</li>
+          <li>Wrote AI and data points of view, executive presentations, PRDs and business cases.</li>
+        </ul>
+        <p class="back"><a href="#case-list">Back to case study list</a></p>
+      </article>
+
+      <h3 style="margin-top:4rem">More delivery work</h3>
+      <div class="minis">
+        <article class="mini">
+          <ul class="tags"><li class="tag tag--solid">Client delivery</li></ul>
+          <h4>Oncology and pharma platform consolidation</h4>
+          <p>60%+ overlap found across two tools. 80% of safety document review automated: 3 weeks to 2 days. About $250K saved a year. Team of 12.</p>
+        </article>
+        <article class="mini">
+          <ul class="tags"><li class="tag tag--solid">Client delivery</li></ul>
+          <h4>Reverse logistics redesign</h4>
+          <p>Fortune 500 client. Returns and damages unified, duplicate systems removed. 60% more efficient, 40% lower application cost (about $1.2M a year). 23,000 drivers and 300 warehouse users.</p>
+        </article>
+        <article class="mini">
+          <ul class="tags"><li class="tag tag--solid">Client delivery</li></ul>
+          <h4>Clinical-trial onboarding site</h4>
+          <p>HIPAA-compliant site for 10,000+ carers and parents in children's clinical trials. 95% WCAG compliance.</p>
+        </article>
+        <article class="mini">
+          <ul class="tags"><li class="tag tag--solid">Client delivery</li></ul>
+          <h4>Customer reporting tool</h4>
+          <p>Product design for a UK government service where external agencies request laboratory tests. OCR for paper requests automated over 90% of manual effort.</p>
+        </article>
+      </div>
+
+      <h3 style="margin-top:3rem">Ideas, proofs of concept and proposals</h3>
+      <div class="minis">
+        <article class="mini">
+          <ul class="tags"><li class="tag tag--dashed">POC</li></ul>
+          <h4>Personalised health assistant</h4>
+          <p>Product owner for an internal proof of concept for conversational symptom check-ins. About 80% daily engagement in a two-week internal test. Not a production service.</p>
+        </article>
+        <article class="mini">
+          <ul class="tags"><li class="tag tag--dashed">Proposal</li></ul>
+          <h4>Submission quality and privacy assistant</h4>
+          <p>AI that helps people improve a submission before sending it, with personal-data masking and a low-tech option. Not delivered.</p>
+        </article>
+        <article class="mini">
+          <ul class="tags"><li class="tag tag--dashed">Concept</li></ul>
+          <h4>Three internal hackathon wins</h4>
+          <p>An AI travel planner, an AI commute planner and an AI subscription manager.</p>
+        </article>
+      </div>
+      <p class="back"><a href="#top">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <h2 id="exp-title"><span class="num" aria-hidden="true">03</span>Experience</h2>
+      <figure class="viz" style="margin-top:0">
+        <figcaption>Career at a glance</figcaption>
+        <ol class="gantt">
+          <li><span class="g-label"><strong>Engineer, Hyundai R&amp;D</strong> · 2010 to 2013</span><span class="g-track" aria-hidden="true"><span class="g-bar" style="left:0;width:17.65%"></span></span></li>
+          <li><span class="g-label"><strong>MBA, IIM Lucknow</strong> · 2014 to 2016</span><span class="g-track" aria-hidden="true"><span class="g-bar is-edu" style="left:23.53%;width:11.76%"></span></span></li>
+          <li><span class="g-label"><strong>Senior Business Analyst, Cognizant</strong> · 2016 to 2018</span><span class="g-track" aria-hidden="true"><span class="g-bar" style="left:35.29%;width:11.76%"></span></span></li>
+          <li><span class="g-label"><strong>Product Owner / Project Manager, Cognizant</strong> · 2018 to 2020</span><span class="g-track" aria-hidden="true"><span class="g-bar" style="left:47.06%;width:11.76%"></span></span></li>
+          <li><span class="g-label"><strong>Lead Product Manager, Cognizant</strong> · 2020 to now</span><span class="g-track" aria-hidden="true"><span class="g-bar" style="left:58.82%;width:40.59%"></span></span></li>
+        </ol>
+        <div class="g-axis" aria-hidden="true"><span style="left:0">2010</span><span style="left:29.41%">2015</span><span style="left:58.82%">2020</span><span style="left:88.24%">2025</span></div>
+      </figure>
+      <ol class="timeline">
+        <li>
+          <div class="when">2016 to now</div>
+          <div>
+            <h3>Cognizant Technology Solutions</h3>
+            <p>United Kingdom. Senior consulting product leader across 0-to-1 products, public sector service design, ML-assisted workflows, enterprise platforms and retail data.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">2010 to 2013</div>
+          <div>
+            <h3>Hyundai Motor India Engineering</h3>
+            <p>Engineer, Research and Development. Led 200+ research projects. Vehicle structure 40% stronger and 20% cheaper. Quality checks automated, cutting manual work by 60%.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="back"><a href="#top">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <h2 id="skills-title"><span class="num" aria-hidden="true">04</span>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>Product management</h3>
+          <ul class="chips">
+            <li>Product vision</li><li>Product strategy</li><li>Discovery</li><li>Roadmapping</li><li>Prioritisation</li><li>MVP scoping</li><li>Backlog ownership</li><li>User stories</li><li>Acceptance criteria</li><li>Release planning</li><li>KPI definition</li><li>Business cases</li><li>Stakeholder management</li>
+          </ul>
+        </div>
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-repeat"/></svg>Delivery</h3>
+          <ul class="chips">
+            <li>SAFe</li><li>Scrum</li><li>Kanban</li><li>Hybrid delivery</li><li>PI planning support</li><li>Dependency management</li><li>RAID management</li><li>UAT coordination</li><li>Distributed teams</li>
+          </ul>
+        </div>
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cpu"/></svg>AI and automation</h3>
+          <ul class="chips">
+            <li>Human-in-the-loop AI</li><li>ML product discovery</li><li>Acceptance thresholds</li><li>Model accuracy tracking</li><li>Responsible AI</li><li>AI use-case framing</li><li>GenAI prototyping</li><li>Prompt design</li><li>RAG and LLM concepts</li><li>Workflow automation</li>
+          </ul>
+        </div>
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg>Service design and accessibility</h3>
+          <ul class="chips">
+            <li>Journey mapping</li><li>User research</li><li>Usability testing</li><li>Wireframing</li><li>GDS standards</li><li>WCAG</li><li>Service design collaboration</li>
+          </ul>
+        </div>
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-database"/></svg>Data and platforms</h3>
+          <ul class="chips">
+            <li>Azure</li><li>Dynamics 365</li><li>PowerApps</li><li>Google Cloud</li><li>SQL</li><li>Data migration</li><li>Data catalogues</li><li>Customer data platforms</li><li>Analytics dashboards</li><li>A/B testing</li>
+          </ul>
+        </div>
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg>Tools and domains</h3>
+          <ul class="chips">
+            <li>Jira</li><li>Confluence</li><li>Azure DevOps</li><li>Figma</li><li>Miro</li><li>Mural</li><li>Lovable</li><li>Google Analytics</li><li>UK public sector</li><li>Life sciences</li><li>Healthcare</li><li>Retail</li><li>Logistics</li><li>GDPR</li>
+          </ul>
+        </div>
+      </div>
+      <p class="back"><a href="#top">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="credentials" aria-labelledby="cred-title">
+    <div class="wrap">
+      <h2 id="cred-title"><span class="num" aria-hidden="true">05</span>Credentials</h2>
+      <div class="cols-3 cred">
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cap"/></svg>Education</h3>
+          <ul class="plain">
+            <li><strong>MBA, Strategy and Marketing</strong><span class="small">Indian Institute of Management Lucknow, 2014 to 2016</span></li>
+            <li><strong>B.Tech, Mechanical Engineering</strong><span class="small">JNTU Hyderabad, 2006 to 2010</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-award"/></svg>Certifications</h3>
+          <ul class="plain">
+            <li>SAFe 5.0 Product Owner / Product Manager</li>
+            <li>Microsoft Certified: Azure AI Fundamentals</li>
+            <li>Google Cloud Digital Leader</li>
+            <li>Microsoft Dynamics 365 Fundamentals</li>
+            <li>Sustainable Design and Sustainable AI (GoCodeGreen)</li>
+          </ul>
+        </div>
+        <div>
+          <h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>Awards</h3>
+          <ul class="plain">
+            <li>Winner, three internal consulting hackathons (AI-led product concepts)</li>
+            <li>"Pat on the Back" award for presales solution management</li>
+            <li>Named in Hyundai's Global Milestone Report for work on 20+ global vehicle projects</li>
+          </ul>
+        </div>
+      </div>
+      <p class="back"><a href="#top">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="writing" aria-labelledby="writing-title">
+    <div class="wrap">
+      <h2 id="writing-title"><span class="num" aria-hidden="true">06</span>Writing and projects</h2>
+      <ul class="link-list">
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg><span><strong><a href="https://rohitmandapalli.substack.com">AI Seeking vs Legacy Search</a></strong><br>Substack, 2026. AI-mediated commerce, product strategy and how consumers find things.</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><span><strong><a href="https://billethegoat.lovable.app">Bille the Goat</a></strong><br>Live receipt-management prototype.</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg><span><strong><a href="https://github.com/rohitmandapalli">GitHub</a></strong><br>Code and prototypes.</span></li>
+      </ul>
+      <p class="back"><a href="#top">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title"><span class="num" aria-hidden="true">07</span>Contact</h2>
+      <p class="measure">Email is the quickest way to get in touch.</p>
+      <p><a class="email-link" href="mailto:rohit.mandapalli@iiml.org">rohit.mandapalli@iiml.org</a></p>
+      <ul class="link-list" style="margin-top:2rem">
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-link"/></svg><span><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/rohitmandapalli/">linkedin.com/in/rohitmandapalli</a></span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg><span><strong>GitHub</strong><br><a href="https://github.com/rohitmandapalli">github.com/rohitmandapalli</a></span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg><span><strong>Substack</strong><br><a href="https://rohitmandapalli.substack.com">rohitmandapalli.substack.com</a></span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <section id="accessibility" aria-labelledby="a11y-title">
+      <h2 id="a11y-title">Accessibility and about this site</h2>
+      <p>A personal site, not connected to GOV.UK or the Government Digital Service. Built on GOV.UK Design System principles, in black and white.</p>
+      <p>Designed to meet WCAG 2.2 level AA and to work with a keyboard and screen reader. Not independently audited. Report problems to <a href="mailto:rohit.mandapalli@iiml.org">rohit.mandapalli@iiml.org</a>.</p>
+      <p>No cookies, analytics or third-party scripts.</p>
+    </section>
+    <ul class="footer-links">
+      <li>© 2026 Rohit Mandapalli</li>
+      <li>Last updated November 2026</li>
+      <li><a href="#top">Back to top</a></li>
+    </ul>
+  </div>
+</footer>
+
+<nav class="dock" id="dock" aria-label="Quick navigation">
+  <ul>
+    <li><a href="#top"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg><span class="tip">Top</span></a></li>
+    <li><a href="#about"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span class="tip">About</span></a></li>
+    <li><a href="#case-studies"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg><span class="tip">Case studies</span></a></li>
+    <li><a href="#experience"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg><span class="tip">Experience</span></a></li>
+    <li><a href="#skills"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-grid"/></svg><span class="tip">Skills</span></a></li>
+    <li><a href="#credentials"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-award"/></svg><span class="tip">Credentials</span></a></li>
+    <li><a href="#writing"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg><span class="tip">Writing</span></a></li>
+    <li><a href="#contact"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><span class="tip">Contact</span></a></li>
+    <li class="dock-sep js-only"><button type="button" data-open-chat aria-expanded="false" aria-controls="chat"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg><span class="tip">Ask about Rohit</span></button></li>
+  </ul>
+</nav>
+
+<div class="chat" id="chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>
+  <div class="chat-head">
+    <h2 id="chat-title"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>Ask about Rohit's experience</h2>
+    <button class="chat-close" type="button" aria-label="Close chat" data-tip="Close chat"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-x"/></svg></button>
+  </div>
+  <p class="chat-note" id="chat-note"></p>
+  <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation" tabindex="0"></div>
+  <div class="chat-chips" id="chat-chips"></div>
+  <form class="chat-form" id="chat-form" autocomplete="off">
+    <label class="vh" for="chat-input">Your question</label>
+    <input id="chat-input" type="text" maxlength="200" placeholder="Ask a question…" enterkeyhint="send">
+    <button class="chat-send" type="submit" aria-label="Send question" data-tip="Send question"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button>
+  </form>
+  <p class="chat-foot">Automated assistant, not a person.</p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var doc = document.documentElement;
+
+  /* ---------- Reading progress bar (decorative) ---------- */
+  var bar = document.getElementById('bar');
+  var ticking = false;
+  function updateBar() {
+    var max = doc.scrollHeight - doc.clientHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, doc.scrollTop / max)) : 0;
+    bar.style.transform = 'scaleX(' + p + ')';
+    ticking = false;
+  }
+
+  /* ---------- Scroll-spy for the header nav and the icon dock ---------- */
+  var links = [].slice.call(document.querySelectorAll('.nav a[href^="#"], .dock a[href^="#"]'));
+  function setActive(id) {
+    links.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + id) { a.setAttribute('aria-current', 'true'); }
+      else { a.removeAttribute('aria-current'); }
+    });
+  }
+  var ids = ['intro'];
+  links.forEach(function (a) { var id = a.getAttribute('href').slice(1); if (id !== 'top' && ids.indexOf(id) < 0) { ids.push(id); } });
+  var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { setActive(e.target.id); } });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateBar); }
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) { setActive('contact'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateBar);
+  updateBar();
+
+  /* ---------- Mobile menu ---------- */
+  var btn = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('site-nav');
+  function setMenu(open) { btn.setAttribute('aria-expanded', String(open)); nav.classList.toggle('open', open); }
+  btn.addEventListener('click', function () { setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  [].slice.call(nav.querySelectorAll('a')).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { setMenu(false); btn.focus(); }
+  });
+
+  /* ---------- Dock tooltips: Escape hides them (WCAG 1.4.13) ---------- */
+  var dock = document.getElementById('dock');
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { dock.classList.add('tips-off'); } });
+  ['mouseleave', 'focusout'].forEach(function (ev) { dock.addEventListener(ev, function () { dock.classList.remove('tips-off'); }); });
+
+  /* ---------- Dock labels on touch ---------- */
+  var dockTimer = null;
+  [].slice.call(dock.querySelectorAll('a, button')).forEach(function (el) {
+    el.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse') { return; }
+      [].slice.call(dock.querySelectorAll('.show-tip')).forEach(function (x) { x.classList.remove('show-tip'); });
+      el.classList.add('show-tip');
+      clearTimeout(dockTimer);
+      dockTimer = setTimeout(function () { el.classList.remove('show-tip'); }, 1800);
+    });
+  });
+
+  /* ---------- Tooltips for every other icon (mouse, touch, keyboard) ---------- */
+  var GENERIC = { 'arrow-up': 'Back to top', user: 'Person', layers: 'Case studies', briefcase: 'Experience', grid: 'Tools', award: 'Award', pen: 'Writing', mail: 'Email', chat: 'Chat', users: 'Team', shield: 'Security and compliance', clock: 'Time', check: 'Done', flask: 'Life sciences', landmark: 'Government', cart: 'Retail', cloud: 'Cloud', file: 'Document', trending: 'Growth', search: 'Search', target: 'Goal', calendar: 'Years', repeat: 'Delivery cycle', cpu: 'AI and machine learning', layout: 'Design', database: 'Data', cap: 'Education', star: 'Recognition', link: 'Link', code: 'Code', flag: 'Flag' };
+  var STAT = { calendar: 'Years of experience', users: 'Users reached', trending: 'Annual savings', clock: 'Processing time' };
+  var CASEICON = { flask: 'Life sciences', landmark: 'UK government', shield: 'Regulation and security', cloud: 'Cloud platform', cart: 'Retail', file: 'Prototype', trending: 'Commercial' };
+  var LINKICON = { pen: 'Writing', file: 'Prototype', code: 'Code', link: 'Profile' };
+  var CALLICON = { shield: 'Principle', flag: 'Note' };
+  var tipEl = document.createElement('div');
+  tipEl.className = 'icon-tip'; tipEl.setAttribute('aria-hidden', 'true'); tipEl.hidden = true;
+  document.body.appendChild(tipEl);
+  var showT = null, hideT = null, tipNode = null;
+
+  function symbolOf(svg) { var u = svg.querySelector('use'); return u ? (u.getAttribute('href') || '').replace('#i-', '') : ''; }
+  function resolveTip(el) {
+    if (!el || !el.closest) { return null; }
+    var t = el.closest('[data-tip], .ic, .case-icon');
+    if (!t) { return null; }
+    if (t.hasAttribute('data-tip')) { return { node: t, text: t.getAttribute('data-tip') }; }
+    if (t.closest('.dock, .button, .chat, .menu-toggle, .icon-tip')) { return null; }
+    var box = t.closest('.case-icon');
+    var svg = t.matches('.ic') ? t : t.querySelector('.ic');
+    if (!svg) { return null; }
+    var id = symbolOf(svg), text = '', li;
+    if (box) { text = CASEICON[id]; t = box; }
+    else if (t.closest('.stats')) { text = STAT[id]; }
+    else if ((li = t.closest('.flow > li'))) { var st = li.querySelector('strong'), sib = [].slice.call(li.parentNode.children); text = st ? 'Step ' + (sib.indexOf(li) + 1) + ' of ' + sib.length + ': ' + st.textContent : ''; }
+    else if (t.closest('.skills h3, .cred h3')) { text = t.closest('h3').textContent; }
+    else if (t.closest('.link-list')) { text = LINKICON[id]; }
+    else if (t.closest('.callout')) { text = CALLICON[id]; }
+    text = text || GENERIC[id];
+    return text ? { node: t, text: text } : null;
+  }
+  function hideTip() { clearTimeout(showT); clearTimeout(hideT); tipEl.hidden = true; tipNode = null; }
+  function showTip(node, text) {
+    tipNode = node; tipEl.textContent = text; tipEl.hidden = false;
+    var r = node.getBoundingClientRect();
+    var w = tipEl.offsetWidth, h = tipEl.offsetHeight;
+    var x = Math.max(8, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 8));
+    var y = r.top - h - 8;
+    if (y < 8) { y = r.bottom + 8; }
+    tipEl.style.left = x + 'px'; tipEl.style.top = y + 'px';
+  }
+  document.addEventListener('pointerover', function (e) {
+    if (e.pointerType === 'touch') { return; }
+    var r = resolveTip(e.target);
+    if (!r) { return; }
+    clearTimeout(hideT);
+    if (tipNode === r.node) { return; }
+    clearTimeout(showT);
+    showT = setTimeout(function () { showTip(r.node, r.text); }, 120);
+  });
+  document.addEventListener('pointerout', function (e) {
+    if (e.pointerType === 'touch' || !resolveTip(e.target)) { return; }
+    clearTimeout(showT);
+    hideT = setTimeout(hideTip, 250);
+  });
+  tipEl.addEventListener('pointerenter', function () { clearTimeout(hideT); });
+  tipEl.addEventListener('pointerleave', function () { hideT = setTimeout(hideTip, 250); });
+  document.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'touch') { return; }
+    var r = resolveTip(e.target);
+    clearTimeout(hideT);
+    if (!r) { hideTip(); return; }
+    showTip(r.node, r.text);
+    hideT = setTimeout(hideTip, 2200);
+  });
+  document.addEventListener('focusin', function (e) {
+    var t = e.target.closest ? e.target.closest('[data-tip]') : null;
+    if (t && t.matches(':focus-visible')) { showTip(t, t.getAttribute('data-tip')); }
+  });
+  document.addEventListener('focusout', hideTip);
+  window.addEventListener('scroll', hideTip, { passive: true });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { hideTip(); } });
+
+  /* ---------- Experience chat ----------
+     Local mode: answers come from the curated knowledge base below, in the browser.
+     Nothing is sent anywhere. To use a live model instead, set CHAT_ENDPOINT to a
+     server you control that accepts POST {"question": "...", "history": [...]} and
+     returns {"answer": "..."}. Never put an API key in this file. */
+  var CHAT_ENDPOINT = '';
+
+  var EMAIL = 'rohit.mandapalli@iiml.org';
+  var KB = [
+    { id: 'private', w: 3, q: 'Is Rohit available for work?',
+      k: ['salary', 'pay', 'compensation', 'visa', 'sponsorship', 'sponsor', 'notice', 'availability', 'available', 'relocate', 'relocation', 'right to work', 'immigration', 'looking for', 'open to', 'job search'],
+      a: 'Questions about salary, visas, notice or availability are best asked directly. Email ' + EMAIL + '.',
+      links: [['mailto:' + EMAIL, 'Email Rohit']], next: ['contact'] },
+    { id: 'gaps', w: 2, q: 'What are the gaps in his experience?',
+      k: ['gap', 'weakness', 'limitation', 'limit', 'saas', 'bank', 'banking', 'insurance', 'fintech', 'payment', 'product company', 'in house', 'copilot', 'agentic', 'agent', 'lack', 'missing', 'downside'],
+      a: 'Honest limits: most product work has been consulting and client delivery, not an in-house SaaS product team. No deep banking, insurance or payments domain experience. No production GenAI or agentic platform ownership: that work is discovery, prototype and proof of concept. No Copilot Studio agent builds. Not an ML or software engineer.',
+      links: [['#case-studies', 'Case studies']], next: ['strengths', 'ai'] },
+    { id: 'ml', q: 'Tell me about the ML authoring platform',
+      k: ['ml authoring', 'authoring platform', 'watson', 'authoring', 'clinical', 'pharma', 'pharmaceutical', 'document authoring', 'ml assisted', 'ml platform'],
+      a: 'Rohit led the product for an ML-assisted authoring platform for compliance-critical clinical documents, built on IBM Watson for 4,000+ scientific and regulatory staff. He set the vision, MVP scope, accuracy thresholds and human-review rules, and briefed the ML engineers. Results: 80% faster turnaround (about 40 to 8 hours), about $2M saved a year and 80–90% accuracy at launch.',
+      links: [['#cs-ml', 'ML authoring case study']], next: ['measure', 'ai', 'technical'] },
+    { id: 'regulator', q: 'What is the regulator AI project?',
+      k: ['regulator ai', 'regulator', 'cpd', 'submission', 'alpha', 'discovery', 'sampling', 'reviewer', 'ai review', 'professional development'],
+      a: 'Rohit led discovery for AI-assisted review of professional-development submissions at a UK regulator (about 100,000 users, about 200,000 submissions a year, about 2.5% reviewed by hand today), then supported the move into Alpha: reviewer workshops, prompt packs and guardrails. It is not a live service, so there are no production results yet.',
+      links: [['#cs-regulator', 'Regulator case study']], next: ['access', 'ai', 'gaps'] },
+    { id: 'access', q: 'How did he approach MFA and access control?',
+      k: ['mfa', 'authentication', 'sign in', 'login', 'access control', 'rbac', 'security', 'one login', 'multi factor', 'passwordless'],
+      a: 'For the same regulator, Rohit led discovery on access control (a role-based model for regulated data) and multi-factor authentication, comparing text codes, authenticator apps, GOV.UK One Login, passwordless email links and third-party sign-in on security, accessibility, cost and support impact.',
+      links: [['#cs-regulator', 'Regulator case study']], next: ['regulator', 'a11y'] },
+    { id: 'ops', q: 'What was the government service?',
+      k: ['government', 'public sector', 'paper', 'ocr', 'gds', 'digital operations', 'cost management', '10 days', 'agency', 'council'],
+      a: 'Rohit directed strategy, service design and delivery for a new digital operations and cost-management service for a UK government agency, with a 12-person multidisciplinary team working to GDS and WCAG standards. It replaced paper records and email approvals: about 90% of manual processes automated, about 90% fewer errors, and processing down from around 10 days to 2.',
+      links: [['#cs-ops', 'Government service case study']], next: ['a11y', 'leadership'] },
+    { id: 'tax', q: 'Tell me about the tax platform',
+      k: ['tax platform', 'tax', 'valuation', 'valuer', 'dynamics', 'powerapps', 'low code', 'no code', 'excel', 'azure'],
+      a: 'Rohit was product owner for the quality-control workstream of a valuation platform modernisation for a UK tax authority: Excel and SQL processes moved to Azure and Dynamics 365 for 1,000+ valuers, with two teams of 8. Results: about 30% less operational redundancy, about 80% efficiency gains, and 90% of solutions delivered no-code in PowerApps.',
+      links: [['#cs-tax', 'Tax platform case study']], next: ['retail', 'leadership'] },
+    { id: 'retail', q: 'What data migration has he done?',
+      k: ['retail', 'migration', 'customer data', 'cdp', 'records', 'catalogue', 'personalisation', 'segmentation', 'data platform', 'retargeting'],
+      a: 'Rohit wrote the modernisation roadmap for a UK retailer\'s customer data platform (20M+ records). Validation and quality controls improved migration accuracy by 25%, and a data catalogue found 15% redundant data, cutting storage and migration cost.',
+      links: [['#cs-data', 'Data platform case study']], next: ['tax', 'tools'] },
+    { id: 'bille', q: 'What is Bille the Goat?',
+      k: ['bille', 'goat', 'receipt', 'lovable', 'prototype', 'vibe coding', 'prompting'],
+      a: 'Bille the Goat is a live GenAI receipt-management prototype Rohit built in Lovable by prompting and refining, not hand-coding. It tests one idea: capture is the adoption bottleneck, so the product needs flexible ways to get receipts in. It is a prototype, not enterprise software.',
+      links: [['#cs-bille', 'Bille case study'], ['https://billethegoat.lovable.app', 'Try the prototype']], next: ['technical', 'ai'] },
+    { id: 'commercial', q: 'What commercial experience does he have?',
+      k: ['rfp', 'bid', 'proposal', 'presales', 'pipeline', 'consulting', 'win', 'commercial', 'revenue', 'maturity', 'business development'],
+      a: 'Rohit coordinated $50M+ of RFP and proposal responses (teams of up to 25), supported $18M of life sciences contract wins in one quarter, and created a digital maturity assessment tool that generated about $400K in pipeline from 3 client leads in a year.',
+      links: [['#cs-commercial', 'Commercial case study']], next: ['leadership', 'strengths'] },
+    { id: 'measure', q: 'How were the results measured?',
+      k: ['measure', 'measured', 'measurement', 'metric', 'calculate', 'calculated', 'calculation', 'accuracy', 'saving', 'figure', 'evidence', 'defend', 'verify', 'how was', 'how were', '2m'],
+      a: 'Turnaround: manual research and writing were replaced by automated drafting; the remaining 8 hours is review and sign-off. Savings: hours saved across 4,000 writers and scientists multiplied by hourly cost. Accuracy: machine output compared with human-written reports, section by section. On the government service, automation and error figures are approximate (about 90%).',
+      links: [['#cs-ml', 'See how it was measured']], next: ['ops', 'tax'] },
+    { id: 'ai', q: 'What AI work has Rohit delivered?',
+      k: ['ai', 'genai', 'generative', 'llm', 'machine learning', 'ml', 'artificial intelligence', 'rag', 'responsible ai', 'human in the loop', 'ai experience'],
+      a: 'Delivered AI: an ML-assisted clinical document authoring platform for 4,000+ users, with human review built in (80% faster, about $2M saved a year). Newer GenAI work is at discovery, prototype and proof-of-concept stage: an AI review discovery and Alpha for a UK regulator, the Bille the Goat prototype and internal proofs of concept. No production GenAI platform is claimed.',
+      links: [['#cs-ml', 'ML authoring case study']], next: ['ml', 'regulator', 'gaps'] },
+    { id: 'leadership', q: 'What team sizes has he led?',
+      k: ['team', 'lead', 'led', 'manage', 'managed', 'leadership', 'people', 'size', 'stakeholder', 'headcount'],
+      a: 'Team sizes: 12 on the government service, two teams of 8 on the tax platform, 12 on an oncology and pharma platform consolidation, and ad hoc proposal teams of up to 25. Rohit leads multidisciplinary teams across design, research, engineering, analysis and testing.',
+      links: [['#case-studies', 'Case studies']], next: ['pm', 'ops'] },
+    { id: 'pm', q: 'What are his core product skills?',
+      k: ['roadmap', 'roadmapping', 'prioritisation', 'backlog', 'strategy', 'vision', 'mvp', 'product management', 'user research', 'agile', 'safe', 'scrum', 'kanban', 'skill', 'product skills'],
+      a: 'Core product skills: discovery and user research, vision and MVP scoping, roadmaps, prioritisation, backlog ownership, user stories and acceptance criteria, and KPI definition. SAFe 5.0 Product Owner / Product Manager certified, with Scrum, Kanban and hybrid delivery.',
+      links: [['#skills', 'Skills']], next: ['tools', 'a11y'] },
+    { id: 'a11y', q: 'What accessibility experience does he have?',
+      k: ['accessibility', 'accessible', 'wcag', 'inclusive', 'a11y'],
+      a: 'Accessibility is built in from the start: GDS and WCAG standards on the government service, 95% WCAG compliance on a HIPAA-compliant clinical-trial onboarding site for 10,000+ carers and parents, and accessibility as a criterion when comparing sign-in options for the regulator.',
+      links: [['#cs-ops', 'Government service case study']], next: ['ops', 'domains'] },
+    { id: 'domains', q: 'Which industries has he worked in?',
+      k: ['domain', 'industry', 'industries', 'sector', 'healthcare', 'logistics', 'life sciences', 'automotive'],
+      a: 'Life sciences, UK public sector, healthcare, retail and logistics, plus automotive engineering earlier in his career. Regulated, compliance-critical settings are the common thread.',
+      links: [['#experience', 'Experience']], next: ['tools', 'strengths'] },
+    { id: 'tools', q: 'Which tools does he use?',
+      k: ['tool', 'tech', 'stack', 'software', 'jira', 'figma', 'sql', 'confluence', 'miro', 'platform'],
+      a: 'Azure, Dynamics 365, PowerApps, Google Cloud, SQL, Jira, Confluence, Azure DevOps, Figma, Miro, Mural, Google Analytics and Lovable.',
+      links: [['#skills', 'Skills']], next: ['technical', 'certs'] },
+    { id: 'technical', q: 'Can he code?',
+      k: ['code', 'coding', 'engineer', 'engineering', 'developer', 'technical', 'hands on', 'programming', 'python', 'build'],
+      a: 'Rohit is a product manager, not a software or ML engineer. He works closely with engineers, builds with low-code (PowerApps) and prompt-led tools (Lovable), and understands ML at product level: thresholds, confidence, evaluation and human review.',
+      links: [['#cs-bille', 'Bille the Goat']], next: ['gaps', 'bille'] },
+    { id: 'education', q: 'Where did he study?',
+      k: ['education', 'mba', 'degree', 'university', 'study', 'studied', 'iim', 'btech', 'qualification', 'college'],
+      a: 'MBA in Strategy and Marketing from the Indian Institute of Management Lucknow (2014 to 2016), and a B.Tech in Mechanical Engineering from JNTU Hyderabad (2006 to 2010).',
+      links: [['#credentials', 'Credentials']], next: ['certs', 'awards'] },
+    { id: 'certs', q: 'Which certifications does he hold?',
+      k: ['certification', 'certificate', 'certified', 'course', 'training', 'google cloud', 'fundamentals'],
+      a: 'SAFe 5.0 Product Owner / Product Manager, Microsoft Azure AI Fundamentals, Google Cloud Digital Leader, Microsoft Dynamics 365 Fundamentals, and Sustainable Design and Sustainable AI (GoCodeGreen).',
+      links: [['#credentials', 'Credentials']], next: ['education', 'tools'] },
+    { id: 'awards', q: 'Has he won any awards?',
+      k: ['award', 'hackathon', 'winner', 'recognition', 'prize', 'achievement'],
+      a: 'Winner of three internal consulting hackathons (an AI travel planner, an AI commute planner and an AI subscription app), a "Pat on the Back" award for presales solution management, and a mention in Hyundai\'s Global Milestone Report.',
+      links: [['#credentials', 'Credentials']], next: ['writing'] },
+    { id: 'writing', q: 'Does he publish any writing?',
+      k: ['write', 'writing', 'substack', 'blog', 'article', 'thought leadership', 'publish', 'newsletter'],
+      a: 'Rohit writes "AI Seeking vs Legacy Search" on Substack (2026): AI-mediated commerce, product strategy and how consumers find things.',
+      links: [['https://rohitmandapalli.substack.com', 'Read on Substack']], next: ['contact'] },
+    { id: 'strengths', q: 'Why hire Rohit?',
+      k: ['why hire', 'should we hire', 'strength', 'strongest', 'why', 'best at', 'stand out', 'unique', 'value', 'summary'],
+      a: 'Strongest evidence: shipping in regulated, compliance-critical settings; human-in-the-loop AI with measurable results (80% faster, about $2M a year); and public sector delivery (about 10 days down to 2). He also leads multidisciplinary teams and brings consulting-level commercial skills.',
+      links: [['#case-studies', 'Case studies']], next: ['ml', 'ops', 'contact'] },
+    { id: 'timeline', q: 'What is his career history?',
+      k: ['career', 'history', 'progress', 'progression', 'timeline', 'role', 'title', 'job', 'current', 'years', 'long', 'experience'],
+      a: 'Engineer at Hyundai R&D (2010 to 2013), MBA at IIM Lucknow (2014 to 2016), then Cognizant from 2016: Senior Business Analyst, Product Owner / Project Manager (2018 to 2020), and Lead Product Manager (2020 to now).',
+      links: [['#experience', 'Experience']], next: ['domains', 'strengths'] },
+    { id: 'contact', q: 'How can I contact him?',
+      k: ['contact', 'email', 'reach', 'linkedin', 'phone', 'talk', 'meet', 'interview', 'message', 'get in touch'],
+      a: 'Email is quickest: ' + EMAIL + '. LinkedIn: linkedin.com/in/rohitmandapalli.',
+      links: [['mailto:' + EMAIL, 'Email Rohit'], ['https://www.linkedin.com/in/rohitmandapalli/', 'LinkedIn']], next: ['who'] },
+    { id: 'who', q: 'Who is Rohit?',
+      k: ['who', 'about', 'introduce', 'background', 'overview', 'tell me about', 'based', 'location', 'where is'],
+      a: 'Rohit Mandapalli is a Lead Product Manager at Cognizant Technology Solutions in the UK. He has 12+ years of experience delivering regulated digital services, data products and human-in-the-loop AI across UK government, life sciences, retail, healthcare and logistics. He holds an MBA from IIM Lucknow.',
+      links: [['#about', 'About']], next: ['ai', 'timeline'] },
+    { id: 'hello', q: '', k: ['hi', 'hello', 'hey', 'good morning', 'good afternoon'],
+      a: 'Hello. Ask about Rohit\'s projects, skills or AI experience.', links: [], next: [] },
+    { id: 'thanks', q: '', k: ['thanks', 'thank', 'cheers', 'thank you'],
+      a: 'You are welcome. Anything else about Rohit\'s experience?', links: [], next: [] }
+  ];
+  var FALLBACK = { id: 'fallback', a: 'That is not covered in the case studies, so a reliable answer is not available here. Try one of the suggested questions, or email ' + EMAIL + '.', links: [['mailto:' + EMAIL, 'Email Rohit']], next: [] };
+  var START = ['ai', 'measure', 'gaps', 'strengths'];
+
+  function norm(s) { return ' ' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim() + ' '; }
+  function stem(w) { return (w.length > 3 && /[^s]s$/.test(w)) ? w.slice(0, -1) : w; }
+  KB.forEach(function (e) {
+    e.phr = []; e.words = [];
+    e.k.forEach(function (kw) {
+      var n = norm(kw).trim();
+      if (n.indexOf(' ') > -1) { e.phr.push(' ' + n + ' '); } else { e.words.push(stem(n)); }
+    });
+  });
+  function byId(id) { for (var i = 0; i < KB.length; i++) { if (KB[i].id === id) { return KB[i]; } } return null; }
+  function local(question) {
+    var n = norm(question);
+    var toks = n.trim().split(' ').map(stem);
+    var best = null, bestScore = 0;
+    KB.forEach(function (e) {
+      var s = 0;
+      e.phr.forEach(function (p) { if (n.indexOf(p) > -1) { s += 3; } });
+      e.words.forEach(function (w) { if (toks.indexOf(w) > -1) { s += 2; } });
+      s *= (e.w || 1);
+      if (s > bestScore) { bestScore = s; best = e; }
+    });
+    return bestScore >= 2 ? best : FALLBACK;
+  }
+
+  var panel = document.getElementById('chat');
+  var log = document.getElementById('chat-log');
+  var chips = document.getElementById('chat-chips');
+  var form = document.getElementById('chat-form');
+  var input = document.getElementById('chat-input');
+  var note = document.getElementById('chat-note');
+  var closeBtn = panel.querySelector('.chat-close');
+  var openers = [].slice.call(document.querySelectorAll('[data-open-chat]'));
+  var lastOpener = null, started = false, busy = false;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var history = [];
+
+  note.textContent = CHAT_ENDPOINT
+    ? 'Automated answers about Rohit\'s experience. Your question is sent to a server to generate a reply.'
+    : 'Automated answers drawn from the case studies on this page. Runs in your browser. Nothing you type is sent anywhere.';
+
+  function addMsg(role, text, links) {
+    var d = document.createElement('div');
+    d.className = 'msg ' + (role === 'me' ? 'me' : 'bot');
+    var who = document.createElement('span'); who.className = 'vh'; who.textContent = role === 'me' ? 'You: ' : 'Assistant: ';
+    var p = document.createElement('p'); p.textContent = text;
+    d.appendChild(who); d.appendChild(p);
+    (links || []).forEach(function (l) {
+      var a = document.createElement('a'); a.className = 'see'; a.href = l[0]; a.textContent = l[1];
+      if (/^https?:/.test(l[0])) { a.rel = 'noopener'; }
+      a.addEventListener('click', function () { if (window.matchMedia('(max-width: 69.99em)').matches && l[0].charAt(0) === '#') { closePanel(false); } });
+      d.appendChild(a);
+    });
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+    return d;
+  }
+  function showChips(ids) {
+    chips.textContent = '';
+    ids.forEach(function (id) {
+      var e = byId(id); if (!e || !e.q) { return; }
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = e.q;
+      b.addEventListener('click', function () { send(e.q); });
+      chips.appendChild(b);
+    });
+  }
+  function answer(q) {
+    if (!CHAT_ENDPOINT) { return Promise.resolve(local(q)); }
+    var ctl = ('AbortController' in window) ? new AbortController() : null;
+    var t = setTimeout(function () { if (ctl) { ctl.abort(); } }, 15000);
+    return fetch(CHAT_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: q, history: history.slice(-6) }), signal: ctl ? ctl.signal : undefined })
+      .then(function (r) { if (!r.ok) { throw new Error('bad'); } return r.json(); })
+      .then(function (d) { clearTimeout(t); if (!d || typeof d.answer !== 'string' || !d.answer) { throw new Error('empty'); } return { a: d.answer, links: [], next: [] }; })
+      .catch(function () { clearTimeout(t); return local(q); });
+  }
+  function send(text) {
+    text = String(text || '').trim();
+    if (!text || busy) { return; }
+    busy = true;
+    addMsg('me', text);
+    var fromChip = chips.contains(document.activeElement);
+    chips.textContent = '';
+    input.value = '';
+    if (fromChip) { if (window.matchMedia('(pointer: coarse)').matches) { log.focus(); } else { input.focus(); } }
+    var typing = addMsg('bot', '…'); typing.classList.add('typing'); typing.setAttribute('aria-hidden', 'true');
+    var wait = new Promise(function (r) { setTimeout(r, reduce ? 0 : 450); });
+    Promise.all([answer(text), wait]).then(function (res) {
+      var e = res[0];
+      log.removeChild(typing);
+      addMsg('bot', e.a, e.links);
+      history.push({ q: text, a: e.a });
+      showChips(e.next && e.next.length ? e.next : START);
+      busy = false;
+    });
+  }
+  function openPanel(opener) {
+    lastOpener = opener || lastOpener;
+    panel.hidden = false;
+    openers.forEach(function (o) { if (o.hasAttribute('aria-expanded')) { o.setAttribute('aria-expanded', 'true'); } });
+    if (!started) {
+      started = true;
+      addMsg('bot', 'Hello. Ask about Rohit\'s projects, skills or AI experience. Answers come from the case studies on this page.');
+      showChips(START);
+    }
+    input.focus();
+  }
+  function closePanel(returnFocus) {
+    panel.hidden = true;
+    openers.forEach(function (o) { if (o.hasAttribute('aria-expanded')) { o.setAttribute('aria-expanded', 'false'); } });
+    if (returnFocus !== false && lastOpener) { lastOpener.focus(); }
+  }
+  openers.forEach(function (o) {
+    o.addEventListener('click', function () { if (panel.hidden) { openPanel(o); } else { closePanel(true); } });
+  });
+  closeBtn.addEventListener('click', function () { closePanel(true); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) { closePanel(true); } });
+  form.addEventListener('submit', function (e) { e.preventDefault(); send(input.value); });
+})();
+</script>
+</body>
+</html>
