@@ -18,11 +18,13 @@
 <link rel="canonical" href="https://rohitmandapalli.github.io/Productmanagmentportfolio/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' text-anchor='middle' fill='%23fff'%3ERM%3C/text%3E%3C/svg%3E">
 <script>
-/* Runs before first paint: turns on scripting hooks and picks the version (hi-fi by default). */
+/* Runs before first paint: turns on scripting hooks and picks the version.
+   Eco is the plain black and white page (class-free). Power is the colour version (class "hifi"), the default. */
 (function () {
   var d = document.documentElement, c = ' js', m = '';
   try {
     var q = new URLSearchParams(location.search).get('mode'), st = localStorage.getItem('rm-mode');
+    if (q === 'eco') { q = 'lofi'; } else if (q === 'power') { q = 'hifi'; }
     if (q === 'lofi' || q === 'hifi') { m = q; } else if (st === 'lofi' || st === 'hifi') { m = st; }
   } catch (e) {}
   /* No choice made yet: hi-fi, unless the device asks for more contrast or forced colours. */
@@ -81,7 +83,9 @@ summary:focus-visible { background: var(--ink); color: var(--paper); outline-off
 /* ---------- Header and navigation ---------- */
 .site-header { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 3px solid var(--ink); }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1rem; min-height: 3.75rem; padding-top: 5px; }
-.brand { margin-right: auto; font-weight: 800; font-size: 1.125rem; letter-spacing: -.01em; text-decoration: none; padding: .35rem 0; }
+.brand { display: block; margin-right: auto; padding: .25rem 0; line-height: 0; text-decoration: none; }
+.brand img { display: block; width: 2.75rem; height: 2.75rem; border-radius: 50%; filter: grayscale(1) contrast(1.35); }
+.brand:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; background: none; }
 .brand:hover { text-decoration: underline; text-decoration-thickness: .15em; }
 .brand:focus-visible { padding: .35rem .5rem; margin-left: -.5rem; }
 .nav ul { display: flex; flex-wrap: wrap; gap: .125rem; list-style: none; margin: 0; padding: 0; }
@@ -98,7 +102,6 @@ summary:focus-visible { background: var(--ink); color: var(--paper); outline-off
 .menu-toggle:hover, .menu-toggle[aria-expanded="true"] { background: var(--ink); color: var(--paper); }
 .menu-toggle .bars { display: inline-block; width: 1em; margin-left: .5rem; vertical-align: middle; }
 @media (max-width: 23.99em) {
-  .brand { font-size: 1rem; }
   .menu-toggle { padding: .5rem .7rem; }
   .menu-toggle .bars { margin-left: 0; }
   .menu-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -350,6 +353,10 @@ details > div p:last-child { margin-bottom: 0; }
 .chat-log { flex: 1 1 auto; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; min-height: 8rem; }
 .msg { max-width: 92%; padding: .6rem .8rem; border: 2px solid var(--ink); font-size: .9375rem; line-height: 1.45; }
 .msg p { margin: 0; }
+.msg p + ul, .msg ul + p { margin-top: .4rem; }
+.msg ul { margin: 0; padding-left: 1.1rem; }
+.msg li { margin: .2rem 0; }
+.case .viz + ul.list { margin-top: 1.5rem; }
 .msg a { font-weight: 700; }
 .msg .see { display: block; margin-top: .5rem; font-size: .875rem; }
 .msg.bot { align-self: flex-start; }
@@ -373,17 +380,17 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
 .mode-track { position: relative; flex: none; display: block; width: 3.5rem; height: 1.75rem; border: 2px solid var(--ink); border-radius: 999px; background: var(--paper); overflow: hidden; }
 .mode-knob { position: absolute; top: 50%; left: .125rem; width: 1.25rem; height: 1.25rem; margin-top: -.625rem; transition: transform .55s cubic-bezier(.5, 1.5, .5, 1); }
 .mode-knob svg { display: block; width: 100%; height: 100%; overflow: visible; }
-.mode-rays { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; transform-origin: 12px 12px; transition: transform .45s ease, opacity .3s ease; }
-.mode-body { transform-origin: 12px 12px; transition: transform .45s ease; }
-.mode-disc { fill: var(--ink); }
-.mode-bite { transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform .45s ease; }
-.mode-cloud { position: absolute; right: .3rem; top: 50%; width: 1rem; height: .65rem; margin-top: -.3rem; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; transition: transform .45s ease, opacity .3s ease; }
+.mode-tree, .mode-bolt { fill: var(--ink); transform-origin: 12px 12px; transition: transform .45s ease, opacity .3s ease; }
+.mode-bolt { opacity: 0; transform: scale(.3) rotate(-40deg); }
 .mode-stars { position: absolute; inset: 0; opacity: 0; transition: opacity .4s ease; }
 .hifi .mode-knob { transform: translateX(1.75rem); }
-.hifi .mode-rays { transform: scale(.2) rotate(90deg); opacity: 0; }
-.hifi .mode-body { transform: scale(1.7); }
-.hifi .mode-bite { transform: scale(1); }
-.hifi .mode-cloud { transform: translateX(.6rem); opacity: 0; }
+.hifi .mode-tree { opacity: 0; transform: scale(.3) rotate(40deg); }
+.hifi .mode-bolt { opacity: 1; transform: none; }
+/* Energy gauge: five bars, one lit for Eco, all five for Power */
+.impact { align-items: flex-end; gap: 2px; height: 1.25rem; padding: 0 .1rem; cursor: help; }
+.impact i { display: block; width: 4px; border: 1px solid var(--ink); background: var(--ink); transition: background .4s ease; }
+.impact i:nth-child(1) { height: 30%; } .impact i:nth-child(2) { height: 47%; } .impact i:nth-child(3) { height: 64%; } .impact i:nth-child(4) { height: 82%; } .impact i:nth-child(5) { height: 100%; }
+html:not(.hifi) .impact i:nth-child(n+2) { background: transparent; }
 @media (min-width: 60.0625em) { .mode-lab { display: inline; } .site-header.tight .mode-lab { display: none; } }
 
 .toast { position: fixed; z-index: 75; top: 4.75rem; left: 50%; transform: translate(-50%, -.5rem); padding: .4rem .9rem; background: var(--ink); color: var(--paper); font-size: .9375rem; font-weight: 700; white-space: nowrap; opacity: 0; pointer-events: none; box-shadow: 0 0 0 2px var(--paper); transition: opacity .25s ease, transform .25s ease; }
@@ -511,8 +518,9 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
 /* ---------- Header: a floating bar ---------- */
 .hifi .site-header { --paper: #14104A; --ink: #fff; --accent: var(--mint); --focus: var(--moon); --on-focus: var(--night); top: .5rem; margin-top: .5rem; padding: 0 .5rem; background: transparent; border-bottom: 0; color: #fff; }
 .hifi .site-header .wrap { max-width: 61rem; min-height: 3.5rem; padding: .3rem .7rem .3rem 1.25rem; gap: .25rem .75rem; border-radius: 1.75rem; background: rgba(13, 11, 50, .88); -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16); }
-.hifi .brand { font-weight: 700; }
-.hifi .brand:hover { text-decoration: none; color: var(--mint); }
+.hifi .brand img { filter: none; box-shadow: 0 0 0 2px rgba(255, 255, 255, .85); }
+.hifi .site-header .wrap { padding-left: .5rem; }
+.hifi .brand:focus-visible { outline-color: var(--moon); background: none; }
 .hifi .nav { position: relative; }
 .hifi .nav a { z-index: 1; border-radius: 999px; font-weight: 600; transition: color .2s ease; }
 .hifi .nav a::after { content: none; }
@@ -535,7 +543,9 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
 .hifi .mode-lab { color: #D9D2FF; }
 .hifi .mode-lab--hi { color: #fff; text-decoration-color: var(--moon); }
 .hifi .mode-track { border-color: rgba(255, 255, 255, .5); background: linear-gradient(115deg, #0B0A2B 15%, #4A1CB5); }
-.hifi .mode-disc { fill: var(--moon); }
+.hifi .mode-bolt { fill: var(--moon); }
+.hifi .impact i { border-color: transparent; border-radius: 2px; }
+.hifi .impact i:nth-child(1) { background: var(--mint); } .hifi .impact i:nth-child(2) { background: #B6FF6B; } .hifi .impact i:nth-child(3) { background: var(--moon); } .hifi .impact i:nth-child(4) { background: #FF9A5C; } .hifi .impact i:nth-child(5) { background: #FF5C8A; }
 .hifi .mode-knob { filter: drop-shadow(0 0 5px rgba(255, 228, 92, .8)); }
 .hifi .mode-stars { opacity: 1; background: radial-gradient(circle at 16% 34%, #fff 0 1px, transparent 1.5px), radial-gradient(circle at 34% 70%, #fff 0 1.2px, transparent 1.7px), radial-gradient(circle at 46% 26%, #fff 0 .8px, transparent 1.3px), radial-gradient(circle at 8% 72%, #fff 0 .7px, transparent 1.2px); animation: twinkle 3s ease-in-out infinite alternate; }
 .hifi .mode-track { outline: 2px solid transparent; }
@@ -615,6 +625,7 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
 .hifi .tag { border: 1.5px solid var(--line); border-radius: 999px; padding: .2rem .7rem; font-size: .8125rem; font-weight: 600; letter-spacing: 0; text-transform: none; }
 .hifi .tag--solid { border-color: var(--accent); background: var(--accent); color: var(--on-accent); }
 .hifi .tag--dashed { border-style: dashed; }
+.hifi .tag--zero { border-color: #fff; background: #fff; color: var(--night); }
 
 /* ---------- Case studies ---------- */
 .hifi .case-index { border-top: 1px solid var(--line); }
@@ -802,7 +813,7 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top">Rohit Mandapalli</a>
+    <a class="brand" href="#top"><img src="data:image/jpeg;base64,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" width="44" height="44" alt="Rohit Mandapalli, home"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-text">Menu</span><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul>
@@ -815,21 +826,20 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <button class="mode js-only" id="mode" type="button" role="switch" aria-checked="false" aria-label="Hi-fi version" data-tip="Switch to hi-fi">
-      <span class="mode-lab mode-lab--lo" aria-hidden="true">Lo-fi</span>
+    <button class="mode js-only" id="mode" type="button" role="switch" aria-checked="false" aria-label="Power version" data-tip="Switch to Power">
+      <span class="mode-lab mode-lab--lo" aria-hidden="true">Eco</span>
       <span class="mode-track" aria-hidden="true">
         <span class="mode-stars"></span>
-        <svg class="mode-cloud" viewBox="0 0 24 15" focusable="false"><path d="M6.5 13.5h11a4.2 4.2 0 0 0 .6-8.4A6 6 0 0 0 6.7 6.6a3.5 3.5 0 0 0-.2 6.9z"/></svg>
         <span class="mode-knob">
           <svg viewBox="0 0 24 24" focusable="false">
-            <mask id="mode-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#fff"/><circle class="mode-bite" cx="14.9" cy="9.7" r="4.3" fill="#000"/></mask>
-            <path class="mode-rays" d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/>
-            <g class="mode-body"><circle class="mode-disc" cx="12" cy="12" r="5" mask="url(#mode-mask)"/></g>
+            <path class="mode-tree" d="M12 2 17.2 8.6h-2.5l4.3 5.7h-5.6V22h-2.8v-7.7H5l4.3-5.7H6.8z"/>
+            <path class="mode-bolt" d="M13.6 1.5 4.8 13.6h5.6L9.2 22.5l10-12.6h-6z"/>
           </svg>
         </span>
       </span>
-      <span class="mode-lab mode-lab--hi" aria-hidden="true">Hi-fi</span>
+      <span class="mode-lab mode-lab--hi" aria-hidden="true">Power</span>
     </button>
+    <span class="impact js-only" id="impact" role="img" aria-label="Estimated energy use: low" data-tip="Estimated energy use: low. No motion or effects."><i></i><i></i><i></i><i></i><i></i></span>
   </div>
 </header>
 <div class="toast" id="toast" aria-hidden="true"></div>
@@ -880,7 +890,7 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
   <section class="block" id="case-studies" aria-labelledby="cases-title">
     <div class="wrap">
       <h2 id="cases-title"><span class="num" aria-hidden="true">02</span>Case studies</h2>
-      <p class="measure">Seven projects, each labelled by how far the work got.</p>
+      <p class="measure">Seven projects. Each sets out the challenge, the approach and the outcome. “0 to 1” marks a product led end to end.</p>
 
       <ol class="case-index" id="case-list" aria-label="Case study index">
         <li><a href="#cs-ml"><span class="ci-text">ML-assisted clinical document authoring <span class="where">Life sciences</span></span></a></li>
@@ -897,16 +907,35 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
         <header class="case-head">
           <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-flask"/></svg></span>
           <div>
-            <ul class="tags"><li class="tag tag--solid">Client delivery</li><li class="tag">Life sciences</li></ul>
+            <ul class="tags"><li class="tag tag--solid tag--zero">0 to 1</li><li class="tag tag--solid">Client delivery</li><li class="tag">Life sciences</li></ul>
             <h3 id="cs-ml-title">ML-assisted clinical document authoring</h3>
             <p class="headline">Cut document turnaround by 80% with ML drafting and human sign-off.</p>
           </div>
         </header>
         <dl class="facts">
           <div><dt>Client</dt><dd>Global pharmaceutical organisation</dd></div>
-          <div><dt>Role</dt><dd>Product lead. Found the need, set the vision and MVP, and briefed the ML engineers who built it on IBM Watson.</dd></div>
+          <div><dt>Role</dt><dd>Product lead, from idea to launch. Spotted the opportunity, set the vision and MVP, and defined the human sign-off rules the ML engineers built to.</dd></div>
           <div><dt>Users</dt><dd>4,000+ scientific, clinical and regulatory staff</dd></div>
         </dl>
+          <h4>The challenge</h4>
+          <p>Clinical documents were researched and written by hand, over email. Each cycle took around 40 hours, and no fit-for-purpose product existed.</p>
+          <h4>The approach</h4>
+        <figure class="viz">
+          <figcaption>How the platform works</figcaption>
+          <ol class="flow">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><strong>Research</strong><span>Sources gathered automatically</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cpu"/></svg><strong>Draft</strong><span>ML drafts each document section</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-flag"/></svg><strong>Flag</strong><span>Uncertain parts flagged for review</span></li>
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><strong>Human sign-off</strong><span>Experts review and decide</span></li>
+          </ol>
+        </figure>
+        <ul class="list">
+          <li>Mapped the manual, email-based authoring process with medical writers and regulatory teams.</li>
+          <li>Set MVP scope, accuracy thresholds, confidence levels and review rules.</li>
+          <li>Briefed ML engineers on training data, draft logic and when to flag a result.</li>
+          <li>Drove adoption with demos and training in plain language.</li>
+        </ul>
+          <h4>The outcome</h4>
         <ul class="metrics" aria-label="Outcomes">
           <li><strong>80%</strong>faster document turnaround</li>
           <li><strong>~$2M</strong>annual savings</li>
@@ -919,22 +948,7 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
             <div class="cmp after"><span>After</span><span class="cmp-bar" style="--w:20%">~8 hours</span></div>
           </div>
         </figure>
-        <figure class="viz">
-          <figcaption>How the platform works</figcaption>
-          <ol class="flow">
-            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><strong>Research</strong><span>Sources gathered automatically</span></li>
-            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cpu"/></svg><strong>Draft</strong><span>ML drafts each document section</span></li>
-            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-flag"/></svg><strong>Flag</strong><span>Uncertain parts flagged for review</span></li>
-            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-user"/></svg><strong>Human sign-off</strong><span>Experts review and decide</span></li>
-          </ol>
-        </figure>
-        <h4>What was done</h4>
-        <ul class="list">
-          <li>Mapped the manual, email-based authoring process with medical writers and regulatory teams.</li>
-          <li>Set MVP scope, accuracy thresholds, confidence levels and review rules.</li>
-          <li>Briefed ML engineers on training data, draft logic and when to flag a result.</li>
-          <li>Drove adoption with demos and training in plain language.</li>
-        </ul>
+          <p>Adopted by 4,000+ scientific, clinical and regulatory staff.</p>
         <div class="callout"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg><p><strong>Principle.</strong> Automate the repetitive. Flag uncertainty. Humans decide high-risk calls.</p></div>
         <details>
           <summary>How the figures were measured</summary>
@@ -956,29 +970,20 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
         <header class="case-head">
           <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-landmark"/></svg></span>
           <div>
-            <ul class="tags"><li class="tag tag--solid">Client delivery</li><li class="tag">UK public sector</li></ul>
+            <ul class="tags"><li class="tag tag--solid tag--zero">0 to 1</li><li class="tag tag--solid">Client delivery</li><li class="tag">UK public sector</li></ul>
             <h3 id="cs-ops-title">Digital operations and cost-management service</h3>
             <p class="headline">Paper to digital: processing time down from around 10 days to 2.</p>
           </div>
         </header>
         <dl class="facts">
           <div><dt>Client</dt><dd>UK government agency</dd></div>
-          <div><dt>Role</dt><dd>Directed product strategy, service design and delivery, from discovery to adoption.</dd></div>
+          <div><dt>Role</dt><dd>Product lead, from discovery to adoption. Set the product strategy and service design, and led the 12-person team that built it.</dd></div>
           <div><dt>Team</dt><dd>12 people across design, research, development, analysis, testing and architecture</dd></div>
           <div><dt>Standards</dt><dd>GDS and WCAG</dd></div>
         </dl>
-        <ul class="metrics" aria-label="Outcomes">
-          <li><strong>~90%</strong>of manual processes automated</li>
-          <li><strong>~90%</strong>fewer errors and backdated corrections</li>
-          <li><strong>12</strong>people in the multidisciplinary team led</li>
-        </ul>
-        <figure class="viz">
-          <figcaption>End-to-end processing time</figcaption>
-          <div class="compare" role="group" aria-label="Before and after">
-            <div class="cmp"><span>Before</span><span class="cmp-bar" style="--w:100%">~10 days</span></div>
-            <div class="cmp after"><span>After</span><span class="cmp-bar" style="--w:20%">2 days</span></div>
-          </div>
-        </figure>
+          <h4>The challenge</h4>
+          <p>Operations ran on paper records, email approvals and manual reconciliation. Processing took around 10 days, and errors needed backdated corrections.</p>
+          <h4>The approach</h4>
         <figure class="viz">
           <figcaption>Two experiences, one service (illustrative)</figcaption>
           <div class="mock-row">
@@ -1037,13 +1042,26 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
             </figure>
           </div>
         </figure>
-        <h4>What was done</h4>
         <ul class="list">
           <li>Replaced paper records, email approvals and manual reconciliation with one service.</li>
           <li>Ran workshops with frontline and admin staff to map pain points and control gaps, then prioritised the MVP.</li>
           <li>Added structured logging so costs flow into invoices and every action is traceable.</li>
           <li>Guided OCR to capture data from paper documents, cutting manual entry.</li>
         </ul>
+          <h4>The outcome</h4>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>~90%</strong>of manual processes automated</li>
+          <li><strong>~90%</strong>fewer errors and backdated corrections</li>
+          <li><strong>12</strong>people in the multidisciplinary team led</li>
+        </ul>
+        <figure class="viz">
+          <figcaption>End-to-end processing time</figcaption>
+          <div class="compare" role="group" aria-label="Before and after">
+            <div class="cmp"><span>Before</span><span class="cmp-bar" style="--w:100%">~10 days</span></div>
+            <div class="cmp after"><span>After</span><span class="cmp-bar" style="--w:20%">2 days</span></div>
+          </div>
+        </figure>
+          <p>One service now covers frontline logging, approvals, audit and invoicing.</p>
         <details>
           <summary>How the figures were measured</summary>
           <div><p><strong>Processing time.</strong> Automated approval checks removed the bottleneck.</p><p><strong>Automation and errors.</strong> Onboarding details captured automatically with few corrections.</p></div>
@@ -1063,10 +1081,13 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
         </header>
         <dl class="facts">
           <div><dt>Client</dt><dd>UK professional regulator</dd></div>
-          <div><dt>Role</dt><dd>Led product discovery. Supported the move into Alpha.</dd></div>
+          <div><dt>Role</dt><dd>Led product discovery across all three strands and shaped the Alpha that followed.</dd></div>
           <div><dt>Scale</dt><dd>About 100,000 users and 200,000 submissions a year</dd></div>
-          <div><dt>Status</dt><dd>Discovery and Alpha. Not a live service.</dd></div>
+          <div><dt>Status</dt><dd>Discovery complete. Now in Alpha.</dd></div>
         </dl>
+          <h4>The challenge</h4>
+          <p>Only about 1 in 40 professional-development submissions is reviewed by hand. The regulator needed to know whether AI could widen that safely, and how to strengthen staff access and sign-in.</p>
+          <h4>The approach</h4>
         <figure class="viz">
           <figcaption>Reviewed by hand today</figcaption>
           <div class="dots-wrap">
@@ -1094,6 +1115,12 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
           <li><strong>Access control.</strong> Reviewed staff access to regulated data, found governance gaps, recommended a role-based model.</li>
           <li><strong>Multi-factor authentication.</strong> Compared text codes, authenticator apps, GOV.UK One Login, passwordless email links and third-party sign-in on security, accessibility, cost and support impact.</li>
         </ul>
+          <h4>The outcome</h4>
+          <ul class="list">
+            <li>An Alpha plan and future-state blueprint, taken forward into Alpha.</li>
+            <li>A recommended role-based access model for regulated data.</li>
+            <li>A scored comparison of five sign-in options to guide the authentication strategy.</li>
+          </ul>
         <p class="back"><a href="#case-list">Back to case study list</a></p>
       </article>
 
@@ -1109,14 +1136,12 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
         </header>
         <dl class="facts">
           <div><dt>Client</dt><dd>UK tax authority</dd></div>
-          <div><dt>Role</dt><dd>Product owner for the quality-control workstream (validation and submission review), not the whole programme.</dd></div>
-          <div><dt>Scale</dt><dd>1,000+ valuers. Two cross-functional teams of 8.</dd></div>
+          <div><dt>Role</dt><dd>Product owner for quality control: validation and submission review for 1,000+ valuers, leading two cross-functional teams of 8.</dd></div>
+          <div><dt>Scale</dt><dd>1,000+ valuers on Azure and Dynamics 365</dd></div>
         </dl>
-        <ul class="metrics" aria-label="Outcomes">
-          <li><strong>~30%</strong>less operational redundancy</li>
-          <li><strong>~80%</strong>efficiency gains from low-code</li>
-          <li><strong>90%</strong>of solutions delivered no-code</li>
-        </ul>
+          <h4>The challenge</h4>
+          <p>1,000+ valuers relied on Excel and SQL-based processes that were slow, unreliable and hard to maintain.</p>
+          <h4>The approach</h4>
         <figure class="viz">
           <figcaption>From legacy to platform</figcaption>
           <ol class="flow">
@@ -1125,11 +1150,15 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
             <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg><strong>PowerApps</strong><span>Out-of-the-box features, minimal code</span></li>
           </ol>
         </figure>
-        <h4>What was done</h4>
         <ul class="list">
           <li>Refined backlogs and aligned priorities across two teams.</li>
           <li>Turned complex business processes into user stories and acceptance criteria.</li>
-          <li>Improved speed, reliability and maintainability over the legacy approach.</li>
+        </ul>
+          <h4>The outcome</h4>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>~30%</strong>less operational redundancy</li>
+          <li><strong>~80%</strong>efficiency gains from low-code</li>
+          <li><strong>90%</strong>of solutions delivered no-code</li>
         </ul>
         <p class="back"><a href="#case-list">Back to case study list</a></p>
       </article>
@@ -1146,13 +1175,12 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
         </header>
         <dl class="facts">
           <div><dt>Client</dt><dd>UK retailer</dd></div>
-          <div><dt>Role</dt><dd>Wrote the modernisation roadmap. Scoped and managed migration requirements.</dd></div>
+          <div><dt>Role</dt><dd>Authored the modernisation roadmap and directed the migration requirements and data-quality controls.</dd></div>
           <div><dt>Scale</dt><dd>20M+ customer records</dd></div>
         </dl>
-        <ul class="metrics" aria-label="Outcomes">
-          <li><strong>25%</strong>better migration accuracy</li>
-          <li><strong>15%</strong>redundant data found, cutting storage and migration cost</li>
-        </ul>
+          <h4>The challenge</h4>
+          <p>20M+ customer records sat on physical servers, with redundant data and no reliable base for personalisation.</p>
+          <h4>The approach</h4>
         <figure class="viz">
           <figcaption>From records to personalisation</figcaption>
           <ol class="flow">
@@ -1163,12 +1191,17 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
             <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><strong>Use</strong><span>Segmentation, personalisation, retargeting</span></li>
           </ol>
         </figure>
-        <h4>What was done</h4>
         <ul class="list">
           <li>Guided migration and transformation logic so data was ready for segmentation and personalisation.</li>
           <li>Supported retargeting across app and email, using behavioural signals to recover abandoned baskets.</li>
           <li>Helped lay the foundation for unified customer profiles and analytics-led marketing.</li>
         </ul>
+          <h4>The outcome</h4>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>25%</strong>better migration accuracy</li>
+          <li><strong>15%</strong>redundant data found, cutting storage and migration cost</li>
+        </ul>
+          <p>A clean base for unified customer profiles and analytics-led marketing.</p>
         <p class="back"><a href="#case-list">Back to case study list</a></p>
       </article>
 
@@ -1177,15 +1210,18 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
         <header class="case-head">
           <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-file"/></svg></span>
           <div>
-            <ul class="tags"><li class="tag tag--dashed">Prototype</li><li class="tag">Personal project</li></ul>
+            <ul class="tags"><li class="tag tag--solid tag--zero">0 to 1</li><li class="tag tag--dashed">Prototype</li><li class="tag">Personal project</li></ul>
             <h3 id="cs-bille-title">Bille the Goat</h3>
             <p class="headline">From idea to a working GenAI app, built by prompting.</p>
           </div>
         </header>
         <dl class="facts">
-          <div><dt>Role</dt><dd>Product owner and builder. Made in Lovable through prompting and refining, not hand-coding.</dd></div>
+          <div><dt>Role</dt><dd>Product owner and builder, from idea to working app. Made in Lovable by prompting and refining.</dd></div>
           <div><dt>Try it</dt><dd><a href="https://billethegoat.lovable.app">billethegoat.lovable.app</a></dd></div>
         </dl>
+          <h4>The challenge</h4>
+          <p>Receipts arrive on paper, by email and in retailer apps, which makes spending, returns and warranties hard to track.</p>
+          <h4>The approach</h4>
         <figure class="viz">
           <figcaption>Receipt management concept</figcaption>
           <ol class="flow">
@@ -1194,14 +1230,14 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
             <li class="is-dashed"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-database"/></svg><strong>Library</strong><span>Search purchases in plain English</span></li>
             <li class="is-dashed"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trending"/></svg><strong>Insights</strong><span>Budgets, return and warranty reminders</span></li>
           </ol>
-          <p class="viz-note">Dashed steps are designed, not all built.</p>
+          <p class="viz-note">Solid step is built. Dashed steps are designed.</p>
         </figure>
-        <h4>What was done</h4>
         <ul class="list">
           <li>Turned user journeys into a working app through repeated prompting, testing and refinement.</li>
           <li><strong>Key insight:</strong> capture is the adoption bottleneck. If getting receipts in is hard, nothing else matters.</li>
         </ul>
-        <div class="callout"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-flag"/></svg><p>A prototype to test product thinking quickly.</p></div>
+          <h4>The outcome</h4>
+          <p>A working GenAI app, live to try, and a clear product thesis: make capture effortless.</p>
         <p class="back"><a href="#case-list">Back to case study list</a></p>
       </article>
 
@@ -1215,11 +1251,12 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
             <p class="headline">$50M+ of bids coordinated. $18M of wins supported.</p>
           </div>
         </header>
-        <ul class="metrics" aria-label="Outcomes">
-          <li><strong>$50M+</strong>of RFP and proposal responses, with teams of up to 25</li>
-          <li><strong>$18M</strong>of life sciences wins supported in one quarter</li>
-          <li><strong>~$400K</strong>pipeline from a digital maturity tool (3 client leads in a year)</li>
-        </ul>
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Directed proposal workstreams and shaped the value story, leading bid teams of up to 25.</dd></div>
+          </dl>
+          <h4>The challenge</h4>
+          <p>Winning large contracts needs a clear value story and a credible delivery plan, pulled together quickly across many specialists.</p>
+          <h4>The approach</h4>
         <figure class="viz">
           <figcaption>How a bid comes together</figcaption>
           <ol class="flow">
@@ -1229,12 +1266,17 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
             <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-award"/></svg><strong>Decision</strong><span>Client award</span></li>
           </ol>
         </figure>
-        <h4>What was done</h4>
         <ul class="list">
           <li>Directed proposal workstreams and shaped propositions, value narratives and delivery approaches.</li>
           <li>Positioned data, AI and disease-management solutions for life sciences clients.</li>
           <li>Created a tool that scores digital maturity, from automation to AI.</li>
           <li>Wrote AI and data points of view, executive presentations, PRDs and business cases.</li>
+        </ul>
+          <h4>The outcome</h4>
+        <ul class="metrics" aria-label="Outcomes">
+          <li><strong>$50M+</strong>of RFP and proposal responses, with teams of up to 25</li>
+          <li><strong>$18M</strong>of life sciences wins supported in one quarter</li>
+          <li><strong>~$400K</strong>pipeline from a digital maturity tool (3 client leads in a year)</li>
         </ul>
         <p class="back"><a href="#case-list">Back to case study list</a></p>
       </article>
@@ -1273,7 +1315,7 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
         <article class="mini">
           <ul class="tags"><li class="tag tag--dashed">Proposal</li></ul>
           <h4>Submission quality and privacy assistant</h4>
-          <p>AI that helps people improve a submission before sending it, with personal-data masking and a low-tech option. Not delivered.</p>
+          <p>AI that helps people improve a submission before sending it, with personal-data masking and a low-tech option.</p>
         </article>
         <article class="mini">
           <ul class="tags"><li class="tag tag--dashed">Concept</li></ul>
@@ -1620,87 +1662,87 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
   var KB = [
     { id: 'private', w: 3, q: 'Is Rohit available for work?',
       k: ['salary', 'pay', 'compensation', 'visa', 'sponsorship', 'sponsor', 'notice', 'availability', 'available', 'relocate', 'relocation', 'right to work', 'immigration', 'looking for', 'open to', 'job search'],
-      a: 'Questions about salary, visas, notice or availability are best asked directly. Email ' + EMAIL + '.',
+      a: 'Those are best answered by Rohit himself.\n- Salary, notice and availability\n- Visa and right to work\nEmail ' + EMAIL + ' and he will come back to you.',
       links: [['mailto:' + EMAIL, 'Email Rohit']], next: ['contact'] },
     { id: 'gaps', w: 2, q: 'What are the gaps in his experience?',
       k: ['gap', 'weakness', 'limitation', 'limit', 'saas', 'bank', 'banking', 'insurance', 'fintech', 'payment', 'product company', 'in house', 'copilot', 'agentic', 'agent', 'lack', 'missing', 'downside'],
-      a: 'Honest limits: most product work has been consulting and client delivery, not an in-house SaaS product team. No deep banking, insurance or payments domain experience. No production GenAI or agentic platform ownership: that work is discovery, prototype and proof of concept. No Copilot Studio agent builds. Not an ML or software engineer.',
+      a: 'Fair question. Here is where his experience is lighter.\n- Most product work is consulting and client delivery, less so in-house SaaS teams\n- Banking, insurance and payments are newer ground\n- GenAI and agentic work is at discovery, prototype and proof-of-concept stage\n- He is a product manager, so engineers do the production coding\nThe case studies show where the evidence is strongest.',
       links: [['#case-studies', 'Case studies']], next: ['strengths', 'ai'] },
     { id: 'ml', q: 'Tell me about the ML authoring platform',
       k: ['ml authoring', 'authoring platform', 'watson', 'authoring', 'clinical', 'pharma', 'pharmaceutical', 'document authoring', 'ml assisted', 'ml platform'],
-      a: 'Rohit led the product for an ML-assisted authoring platform for compliance-critical clinical documents, built on IBM Watson for 4,000+ scientific and regulatory staff. He set the vision, MVP scope, accuracy thresholds and human-review rules, and briefed the ML engineers. Results: 80% faster turnaround (about 40 to 8 hours), about $2M saved a year and 80–90% accuracy at launch.',
+      a: 'This is his flagship AI product, led from idea to launch.\n- What: ML-assisted authoring of clinical documents, built on IBM Watson\n- Who for: 4,000+ scientific, clinical and regulatory staff\n- His part: set the vision, MVP, accuracy thresholds and human sign-off rules, and directed the ML engineers\n- Results: 80% faster turnaround (about 40 hours to 8), about $2M saved a year, 80–90% accuracy at launch',
       links: [['#cs-ml', 'ML authoring case study']], next: ['measure', 'ai', 'technical'] },
     { id: 'regulator', q: 'What is the regulator AI project?',
       k: ['regulator ai', 'regulator', 'cpd', 'submission', 'alpha', 'discovery', 'sampling', 'reviewer', 'ai review', 'professional development'],
-      a: 'Rohit led discovery for AI-assisted review of professional-development submissions at a UK regulator (about 100,000 users, about 200,000 submissions a year, about 2.5% reviewed by hand today), then supported the move into Alpha: reviewer workshops, prompt packs and guardrails. It is not a live service, so there are no production results yet.',
+      a: 'A discovery he led for a UK professional regulator.\n- The question: can AI safely widen review beyond the 2.5% of submissions checked by hand?\n- Scale: about 100,000 users and 200,000 submissions a year\n- His part: led discovery, then shaped Alpha with reviewer workshops, prompt packs and guardrails\n- Where it is: discovery complete, now in Alpha',
       links: [['#cs-regulator', 'Regulator case study']], next: ['access', 'ai', 'gaps'] },
     { id: 'access', q: 'How did he approach MFA and access control?',
       k: ['mfa', 'authentication', 'sign in', 'login', 'access control', 'rbac', 'security', 'one login', 'multi factor', 'passwordless'],
-      a: 'For the same regulator, Rohit led discovery on access control (a role-based model for regulated data) and multi-factor authentication, comparing text codes, authenticator apps, GOV.UK One Login, passwordless email links and third-party sign-in on security, accessibility, cost and support impact.',
+      a: 'Two more discoveries he led for the same regulator.\n- Access control: reviewed staff access to regulated data and recommended a role-based model\n- Multi-factor sign-in: compared text codes, authenticator apps, GOV.UK One Login, email links and third-party sign-in\n- Judged on: security, accessibility, cost and support impact',
       links: [['#cs-regulator', 'Regulator case study']], next: ['regulator', 'a11y'] },
     { id: 'ops', q: 'What was the government service?',
       k: ['government', 'public sector', 'paper', 'ocr', 'gds', 'digital operations', 'cost management', '10 days', 'agency', 'council'],
-      a: 'Rohit directed strategy, service design and delivery for a new digital operations and cost-management service for a UK government agency, with a 12-person multidisciplinary team working to GDS and WCAG standards. It replaced paper records and email approvals: about 90% of manual processes automated, about 90% fewer errors, and processing down from around 10 days to 2.',
+      a: 'A new digital service for a UK government agency, led from discovery to adoption.\n- Before: paper records, email approvals and manual reconciliation\n- His part: set the strategy and service design, and led a 12-person team to GDS and WCAG standards\n- Results: about 90% of manual work automated, about 90% fewer errors, processing down from around 10 days to 2',
       links: [['#cs-ops', 'Government service case study']], next: ['a11y', 'leadership'] },
     { id: 'tax', q: 'Tell me about the tax platform',
       k: ['tax platform', 'tax', 'valuation', 'valuer', 'dynamics', 'powerapps', 'low code', 'no code', 'excel', 'azure'],
-      a: 'Rohit was product owner for the quality-control workstream of a valuation platform modernisation for a UK tax authority: Excel and SQL processes moved to Azure and Dynamics 365 for 1,000+ valuers, with two teams of 8. Results: about 30% less operational redundancy, about 80% efficiency gains, and 90% of solutions delivered no-code in PowerApps.',
+      a: 'A platform modernisation for a UK tax authority.\n- What: Excel and SQL processes moved to Azure and Dynamics 365 for 1,000+ valuers\n- His part: product owner for quality control, leading two teams of 8\n- Results: about 30% less operational redundancy, about 80% efficiency gains, 90% of solutions delivered no-code in PowerApps',
       links: [['#cs-tax', 'Tax platform case study']], next: ['retail', 'leadership'] },
     { id: 'retail', q: 'What data migration has he done?',
       k: ['retail', 'migration', 'customer data', 'cdp', 'records', 'catalogue', 'personalisation', 'segmentation', 'data platform', 'retargeting'],
-      a: 'Rohit wrote the modernisation roadmap for a UK retailer\'s customer data platform (20M+ records). Validation and quality controls improved migration accuracy by 25%, and a data catalogue found 15% redundant data, cutting storage and migration cost.',
+      a: 'A customer data platform migration for a UK retailer.\n- Scale: 20M+ records\n- His part: wrote the modernisation roadmap and directed the migration requirements\n- Results: 25% better migration accuracy, and 15% redundant data found, which cut storage and migration cost',
       links: [['#cs-data', 'Data platform case study']], next: ['tax', 'tools'] },
     { id: 'bille', q: 'What is Bille the Goat?',
       k: ['bille', 'goat', 'receipt', 'lovable', 'prototype', 'vibe coding', 'prompting'],
-      a: 'Bille the Goat is a live GenAI receipt-management prototype Rohit built in Lovable by prompting and refining, not hand-coding. It tests one idea: capture is the adoption bottleneck, so the product needs flexible ways to get receipts in. It is a prototype, not enterprise software.',
+      a: 'Bille the Goat is his own GenAI receipt app, and it is live to try.\n- Built in Lovable by prompting and refining\n- Taken from idea to working prototype\n- Key insight: capture is the adoption bottleneck, so receipts must be easy to get in',
       links: [['#cs-bille', 'Bille case study'], ['https://billethegoat.lovable.app', 'Try the prototype']], next: ['technical', 'ai'] },
     { id: 'commercial', q: 'What commercial experience does he have?',
       k: ['rfp', 'bid', 'proposal', 'presales', 'pipeline', 'consulting', 'win', 'commercial', 'revenue', 'maturity', 'business development'],
-      a: 'Rohit coordinated $50M+ of RFP and proposal responses (teams of up to 25), supported $18M of life sciences contract wins in one quarter, and created a digital maturity assessment tool that generated about $400K in pipeline from 3 client leads in a year.',
+      a: 'He brings consulting-level commercial experience.\n- $50M+ of RFP and proposal responses coordinated, with teams of up to 25\n- $18M of life sciences wins supported in one quarter\n- About $400K of pipeline from a digital maturity tool he created',
       links: [['#cs-commercial', 'Commercial case study']], next: ['leadership', 'strengths'] },
     { id: 'measure', q: 'How were the results measured?',
       k: ['measure', 'measured', 'measurement', 'metric', 'calculate', 'calculated', 'calculation', 'accuracy', 'saving', 'figure', 'evidence', 'defend', 'verify', 'how was', 'how were', '2m'],
-      a: 'Turnaround: manual research and writing were replaced by automated drafting; the remaining 8 hours is review and sign-off. Savings: hours saved across 4,000 writers and scientists multiplied by hourly cost. Accuracy: machine output compared with human-written reports, section by section. On the government service, automation and error figures are approximate (about 90%).',
+      a: 'Here is how the headline figures were worked out.\n- Turnaround: automated drafting replaced manual research and writing. The remaining 8 hours is review and sign-off\n- Savings: hours saved across 4,000 writers and scientists, multiplied by hourly cost\n- Accuracy: machine output compared with human-written reports, section by section\n- Government service: automation and error figures are approximate, at about 90%',
       links: [['#cs-ml', 'See how it was measured']], next: ['ops', 'tax'] },
     { id: 'ai', q: 'What AI work has Rohit delivered?',
       k: ['ai', 'genai', 'generative', 'llm', 'machine learning', 'ml', 'artificial intelligence', 'rag', 'responsible ai', 'human in the loop', 'ai experience'],
-      a: 'Delivered AI: an ML-assisted clinical document authoring platform for 4,000+ users, with human review built in (80% faster, about $2M saved a year). Newer GenAI work is at discovery, prototype and proof-of-concept stage: an AI review discovery and Alpha for a UK regulator, the Bille the Goat prototype and internal proofs of concept. No production GenAI platform is claimed.',
+      a: 'Delivered AI, plus newer GenAI work.\n- Live product: ML-assisted clinical document authoring for 4,000+ users, with human sign-off built in (80% faster, about $2M saved a year)\n- Discovery and Alpha: AI-assisted review for a UK regulator\n- Prototype: Bille the Goat, a GenAI receipt app\n- Proofs of concept: a health assistant and three hackathon wins',
       links: [['#cs-ml', 'ML authoring case study']], next: ['ml', 'regulator', 'gaps'] },
     { id: 'leadership', q: 'What team sizes has he led?',
       k: ['team', 'lead', 'led', 'manage', 'managed', 'leadership', 'people', 'size', 'stakeholder', 'headcount'],
-      a: 'Team sizes: 12 on the government service, two teams of 8 on the tax platform, 12 on an oncology and pharma platform consolidation, and ad hoc proposal teams of up to 25. Rohit leads multidisciplinary teams across design, research, engineering, analysis and testing.',
+      a: 'Team sizes he has led:\n- 12 on the government service\n- Two teams of 8 on the tax platform\n- 12 on an oncology and pharma platform consolidation\n- Proposal teams of up to 25\nAll multidisciplinary: design, research, engineering, analysis and testing.',
       links: [['#case-studies', 'Case studies']], next: ['pm', 'ops'] },
     { id: 'pm', q: 'What are his core product skills?',
       k: ['roadmap', 'roadmapping', 'prioritisation', 'backlog', 'strategy', 'vision', 'mvp', 'product management', 'user research', 'agile', 'safe', 'scrum', 'kanban', 'skill', 'product skills'],
-      a: 'Core product skills: discovery and user research, vision and MVP scoping, roadmaps, prioritisation, backlog ownership, user stories and acceptance criteria, and KPI definition. SAFe 5.0 Product Owner / Product Manager certified, with Scrum, Kanban and hybrid delivery.',
+      a: 'Core product skills:\n- Discovery and user research\n- Vision, MVP scoping and roadmaps\n- Prioritisation and backlog ownership\n- User stories, acceptance criteria and KPIs\nHe is SAFe 5.0 Product Owner / Product Manager certified, and works in Scrum, Kanban and hybrid delivery.',
       links: [['#skills', 'Skills']], next: ['tools', 'a11y'] },
     { id: 'a11y', q: 'What accessibility experience does he have?',
       k: ['accessibility', 'accessible', 'wcag', 'inclusive', 'a11y'],
-      a: 'Accessibility is built in from the start: GDS and WCAG standards on the government service, 95% WCAG compliance on a HIPAA-compliant clinical-trial onboarding site for 10,000+ carers and parents, and accessibility as a criterion when comparing sign-in options for the regulator.',
+      a: 'Accessibility is built in from the start.\n- GDS and WCAG standards on the government service\n- 95% WCAG compliance on a clinical-trial onboarding site for 10,000+ carers and parents\n- Accessibility as a test when comparing sign-in options for the regulator',
       links: [['#cs-ops', 'Government service case study']], next: ['ops', 'domains'] },
     { id: 'domains', q: 'Which industries has he worked in?',
       k: ['domain', 'industry', 'industries', 'sector', 'healthcare', 'logistics', 'life sciences', 'automotive'],
-      a: 'Life sciences, UK public sector, healthcare, retail and logistics, plus automotive engineering earlier in his career. Regulated, compliance-critical settings are the common thread.',
+      a: 'He has worked across:\n- Life sciences\n- UK public sector\n- Healthcare\n- Retail and logistics\n- Automotive engineering, earlier in his career\nRegulated, compliance-critical settings are the common thread.',
       links: [['#experience', 'Experience']], next: ['tools', 'strengths'] },
     { id: 'tools', q: 'Which tools does he use?',
       k: ['tool', 'tech', 'stack', 'software', 'jira', 'figma', 'sql', 'confluence', 'miro', 'platform'],
-      a: 'Azure, Dynamics 365, PowerApps, Google Cloud, SQL, Jira, Confluence, Azure DevOps, Figma, Miro, Mural, Google Analytics and Lovable.',
+      a: 'His everyday toolkit:\n- Platforms: Azure, Dynamics 365, PowerApps, Google Cloud\n- Delivery: Jira, Confluence, Azure DevOps\n- Design: Figma, Miro, Mural\n- Data and build: SQL, Google Analytics, Lovable',
       links: [['#skills', 'Skills']], next: ['technical', 'certs'] },
     { id: 'technical', q: 'Can he code?',
       k: ['code', 'coding', 'engineer', 'engineering', 'developer', 'technical', 'hands on', 'programming', 'python', 'build'],
-      a: 'Rohit is a product manager, not a software or ML engineer. He works closely with engineers, builds with low-code (PowerApps) and prompt-led tools (Lovable), and understands ML at product level: thresholds, confidence, evaluation and human review.',
+      a: 'He is a product manager who builds where it helps.\n- Low-code: PowerApps\n- Prompt-led tools: Lovable, used to build Bille the Goat\n- ML at product level: thresholds, confidence, evaluation and human review\nEngineers do the production coding, and he works closely with them.',
       links: [['#cs-bille', 'Bille the Goat']], next: ['gaps', 'bille'] },
     { id: 'education', q: 'Where did he study?',
       k: ['education', 'mba', 'degree', 'university', 'study', 'studied', 'iim', 'btech', 'qualification', 'college'],
-      a: 'MBA in Strategy and Marketing from the Indian Institute of Management Lucknow (2014 to 2016), and a B.Tech in Mechanical Engineering from JNTU Hyderabad (2006 to 2010).',
+      a: 'Two degrees:\n- MBA in Strategy and Marketing, Indian Institute of Management Lucknow (2014 to 2016)\n- B.Tech in Mechanical Engineering, JNTU Hyderabad (2006 to 2010)',
       links: [['#credentials', 'Credentials']], next: ['certs', 'awards'] },
     { id: 'certs', q: 'Which certifications does he hold?',
       k: ['certification', 'certificate', 'certified', 'course', 'training', 'google cloud', 'fundamentals'],
-      a: 'SAFe 5.0 Product Owner / Product Manager, Microsoft Azure AI Fundamentals, Google Cloud Digital Leader, Microsoft Dynamics 365 Fundamentals, and Sustainable Design and Sustainable AI (GoCodeGreen).',
+      a: 'He holds five certifications:\n- SAFe 5.0 Product Owner / Product Manager\n- Microsoft Azure AI Fundamentals\n- Google Cloud Digital Leader\n- Microsoft Dynamics 365 Fundamentals\n- Sustainable Design and Sustainable AI (GoCodeGreen)',
       links: [['#credentials', 'Credentials']], next: ['education', 'tools'] },
     { id: 'awards', q: 'Has he won any awards?',
       k: ['award', 'hackathon', 'winner', 'recognition', 'prize', 'achievement'],
-      a: 'Winner of three internal consulting hackathons (an AI travel planner, an AI commute planner and an AI subscription app), a "Pat on the Back" award for presales solution management, and a mention in Hyundai\'s Global Milestone Report.',
+      a: 'Yes, a few.\n- Three internal consulting hackathons won: an AI travel planner, an AI commute planner and an AI subscription app\n- A "Pat on the Back" award for presales solution management\n- A mention in Hyundai\'s Global Milestone Report',
       links: [['#credentials', 'Credentials']], next: ['writing'] },
     { id: 'writing', q: 'Does he publish any writing?',
       k: ['write', 'writing', 'substack', 'blog', 'article', 'thought leadership', 'publish', 'newsletter'],
@@ -1708,11 +1750,11 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
       links: [['https://rohitmandapalli.substack.com', 'Read on Substack']], next: ['contact'] },
     { id: 'strengths', q: 'Why hire Rohit?',
       k: ['why hire', 'should we hire', 'strength', 'strongest', 'why', 'best at', 'stand out', 'unique', 'value', 'summary'],
-      a: 'Strongest evidence: shipping in regulated, compliance-critical settings; human-in-the-loop AI with measurable results (80% faster, about $2M a year); and public sector delivery (about 10 days down to 2). He also leads multidisciplinary teams and brings consulting-level commercial skills.',
+      a: 'Three things stand out.\n- Shipping in regulated, compliance-critical settings\n- Human-in-the-loop AI with measurable results: 80% faster, about $2M a year\n- Public sector delivery: about 10 days down to 2\nHe also leads multidisciplinary teams and brings consulting-level commercial skills.',
       links: [['#case-studies', 'Case studies']], next: ['ml', 'ops', 'contact'] },
     { id: 'timeline', q: 'What is his career history?',
       k: ['career', 'history', 'progress', 'progression', 'timeline', 'role', 'title', 'job', 'current', 'years', 'long', 'experience'],
-      a: 'Engineer at Hyundai R&D (2010 to 2013), MBA at IIM Lucknow (2014 to 2016), then Cognizant from 2016: Senior Business Analyst, Product Owner / Project Manager (2018 to 2020), and Lead Product Manager (2020 to now).',
+      a: 'His path so far:\n- 2010 to 2013: engineer at Hyundai R&D\n- 2014 to 2016: MBA at IIM Lucknow\n- 2016 to 2018: Senior Business Analyst, Cognizant\n- 2018 to 2020: Product Owner / Project Manager\n- 2020 to now: Lead Product Manager',
       links: [['#experience', 'Experience']], next: ['domains', 'strengths'] },
     { id: 'contact', q: 'How can I contact him?',
       k: ['contact', 'email', 'reach', 'linkedin', 'phone', 'talk', 'meet', 'interview', 'message', 'get in touch'],
@@ -1720,14 +1762,14 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
       links: [['mailto:' + EMAIL, 'Email Rohit'], ['https://www.linkedin.com/in/rohitmandapalli/', 'LinkedIn']], next: ['who'] },
     { id: 'who', q: 'Who is Rohit?',
       k: ['who', 'about', 'introduce', 'background', 'overview', 'tell me about', 'based', 'location', 'where is'],
-      a: 'Rohit Mandapalli is a Lead Product Manager at Cognizant Technology Solutions in the UK. He has 12+ years of experience delivering regulated digital services, data products and human-in-the-loop AI across UK government, life sciences, retail, healthcare and logistics. He holds an MBA from IIM Lucknow.',
+      a: 'Rohit Mandapalli is a Lead Product Manager at Cognizant Technology Solutions in the UK.\n- 12+ years delivering regulated digital services, data products and human-in-the-loop AI\n- Sectors: UK government, life sciences, retail, healthcare and logistics\n- MBA from IIM Lucknow',
       links: [['#about', 'About']], next: ['ai', 'timeline'] },
     { id: 'hello', q: '', k: ['hi', 'hello', 'hey', 'good morning', 'good afternoon'],
-      a: 'Hello. Ask about Rohit\'s projects, skills or AI experience.', links: [], next: [] },
+      a: 'Hello! Ask me about Rohit\'s projects, skills or AI experience.', links: [], next: [] },
     { id: 'thanks', q: '', k: ['thanks', 'thank', 'cheers', 'thank you'],
-      a: 'You are welcome. Anything else about Rohit\'s experience?', links: [], next: [] }
+      a: 'You are welcome. Anything else you would like to know?', links: [], next: [] }
   ];
-  var FALLBACK = { id: 'fallback', a: 'That is not covered in the case studies, so a reliable answer is not available here. Try one of the suggested questions, or email ' + EMAIL + '.', links: [['mailto:' + EMAIL, 'Email Rohit']], next: [] };
+  var FALLBACK = { id: 'fallback', a: 'That one is not covered on this page, so I would rather not guess.\n- Try one of the suggested questions\n- Or email ' + EMAIL + ' for a direct answer', links: [['mailto:' + EMAIL, 'Email Rohit']], next: [] };
   var START = ['ai', 'measure', 'gaps', 'strengths'];
 
   function norm(s) { return ' ' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim() + ' '; }
@@ -1772,8 +1814,15 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
     var d = document.createElement('div');
     d.className = 'msg ' + (role === 'me' ? 'me' : 'bot');
     var who = document.createElement('span'); who.className = 'vh'; who.textContent = role === 'me' ? 'You: ' : 'Assistant: ';
-    var p = document.createElement('p'); p.textContent = text;
-    d.appendChild(who); d.appendChild(p);
+    d.appendChild(who);
+    /* Answers are plain text: lines starting "- " become a bulleted list, the rest are paragraphs. */
+    var ul = null;
+    String(text).split('\n').forEach(function (line) {
+      if (line.indexOf('- ') === 0) {
+        if (!ul) { ul = document.createElement('ul'); d.appendChild(ul); }
+        var li = document.createElement('li'); li.textContent = line.slice(2); ul.appendChild(li);
+      } else { ul = null; var p = document.createElement('p'); p.textContent = line; d.appendChild(p); }
+    });
     (links || []).forEach(function (l) {
       var a = document.createElement('a'); a.className = 'see'; a.href = l[0]; a.textContent = l[1];
       if (/^https?:/.test(l[0])) { a.rel = 'noopener'; }
@@ -1829,7 +1878,7 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
     openers.forEach(function (o) { if (o.hasAttribute('aria-expanded')) { o.setAttribute('aria-expanded', 'true'); } });
     if (!started) {
       started = true;
-      addMsg('bot', 'Hello. Ask about Rohit\'s projects, skills or AI experience.');
+      addMsg('bot', 'Hello! Ask me about Rohit\'s projects, skills or AI experience.');
       showChips(START);
     }
     input.focus();
@@ -1847,8 +1896,8 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
   form.addEventListener('submit', function (e) { e.preventDefault(); send(input.value); });
 
   /* ---------- Lo-fi / Hi-fi ----------
-     Lo-fi is the plain black and white page. Hi-fi adds the night-to-sunrise design.
-     The choice is kept in this browser. A link ending ?mode=lofi or ?mode=hifi opens that version. */
+     Eco is the plain black and white page. Power adds the night-to-sunrise design.
+     The choice is kept in this browser. A link ending ?mode=eco or ?mode=power opens that version. */
   var modeBtn = document.getElementById('mode');
   var toast = document.getElementById('toast');
   var header = document.querySelector('.site-header');
@@ -1883,7 +1932,8 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
     var a = getAnchor();
     doc.classList.toggle('hifi', hi);
     modeBtn.setAttribute('aria-checked', String(hi));
-    modeBtn.setAttribute('data-tip', hi ? 'Switch to lo-fi' : 'Switch to hi-fi');
+    modeBtn.setAttribute('data-tip', hi ? 'Switch to Eco' : 'Switch to Power');
+    setImpact(hi);
     if (themeMeta) { themeMeta.setAttribute('content', hi ? '#0B0A2B' : '#ffffff'); }
     restoreAnchor(a);
     refreshLayout();
@@ -1895,7 +1945,7 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
     try {
       if (/[?&]mode=/.test(location.search)) {
         var u = new URL(location.href);
-        u.searchParams.set('mode', hi ? 'hifi' : 'lofi');
+        u.searchParams.set('mode', hi ? 'power' : 'eco');
         history.replaceState(null, '', u.toString());
       }
     } catch (e) {}
@@ -1905,7 +1955,13 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
     doc.style.setProperty('--my', (r.top + r.height / 2) + 'px');
     if (document.startViewTransition && !mqReduce.matches) { document.startViewTransition(function () { applyMode(hi); }); }
     else { applyMode(hi); }
-    showToast(hi ? 'Hi-fi version' : 'Lo-fi version');
+    showToast(hi ? 'Power version' : 'Eco version');
+  }
+  /* The gauge is an estimate, not a measurement: Eco runs no animation, canvas or blur effects, so the device does less work. */
+  function setImpact(hi) {
+    var g = document.getElementById('impact');
+    g.setAttribute('aria-label', 'Estimated energy use: ' + (hi ? 'higher' : 'low'));
+    g.setAttribute('data-tip', hi ? 'Estimated energy use: higher. Motion and effects work your device harder.' : 'Estimated energy use: low. No motion or effects.');
   }
   var toastT = 0;
   function showToast(msg) {
@@ -1921,7 +1977,8 @@ html:not(.hifi) .mode-lab--lo, .hifi .mode-lab--hi { font-weight: 800; text-deco
   });
   modeBtn.setAttribute('aria-checked', String(isHifi()));
   try { if (localStorage.getItem('rm-mode')) { modeBtn.classList.add('used'); } } catch (e) {}
-  modeBtn.setAttribute('data-tip', isHifi() ? 'Switch to lo-fi' : 'Switch to hi-fi');
+  modeBtn.setAttribute('data-tip', isHifi() ? 'Switch to Eco' : 'Switch to Power');
+  setImpact(isHifi());
 
   /* ---------- Header: liquid highlight in the nav, and room for the switch labels ---------- */
   var blob = document.createElement('span');
