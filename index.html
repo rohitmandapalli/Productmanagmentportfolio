@@ -642,7 +642,8 @@ html:not(.hifi) .impact i:nth-child(n+2) { background: transparent; }
 .hifi .case-index li:nth-child(4), .hifi #cs-tax { --c: var(--pink); --accent: var(--pink); }
 .hifi .case-index li:nth-child(5), .hifi #cs-data { --c: var(--lime); --accent: var(--lime); }
 .hifi .case-index li:nth-child(6), .hifi #cs-bille { --c: var(--peach); --accent: var(--peach); }
-.hifi .case-index li:nth-child(7), .hifi #cs-commercial { --c: var(--lilac); --accent: var(--lilac); }
+.hifi .case-index li:nth-child(7), .hifi #cs-plainsplain { --c: var(--ice); --accent: var(--ice); }
+.hifi .case-index li:nth-child(8), .hifi #cs-commercial { --c: var(--lilac); --accent: var(--lilac); }
 .hifi .case-index li { --accent: var(--mint); }
 .hifi .case { border: 0; border-radius: 1.75rem; background: var(--panel); }
 .hifi .case-icon { border-radius: 1.1rem; background: var(--accent); color: var(--on-accent); }
@@ -890,7 +891,7 @@ html:not(.hifi) .impact i:nth-child(n+2) { background: transparent; }
   <section class="block" id="case-studies" aria-labelledby="cases-title">
     <div class="wrap">
       <h2 id="cases-title"><span class="num" aria-hidden="true">02</span>Case studies</h2>
-      <p class="measure">Seven projects. Each sets out the challenge, the approach and the outcome. “0 to 1” marks a product led end to end.</p>
+      <p class="measure">Eight projects. Each sets out the challenge, the approach and the outcome. “0 to 1” marks a product led end to end.</p>
 
       <ol class="case-index" id="case-list" aria-label="Case study index">
         <li><a href="#cs-ml"><span class="ci-text">ML-assisted clinical document authoring <span class="where">Life sciences</span></span></a></li>
@@ -899,6 +900,7 @@ html:not(.hifi) .impact i:nth-child(n+2) { background: transparent; }
         <li><a href="#cs-tax"><span class="ci-text">Valuation platform modernisation <span class="where">UK tax authority</span></span></a></li>
         <li><a href="#cs-data"><span class="ci-text">Customer data platform migration <span class="where">UK retail</span></span></a></li>
         <li><a href="#cs-bille"><span class="ci-text">Bille the Goat <span class="where">Personal prototype</span></span></a></li>
+        <li><a href="#cs-plainsplain"><span class="ci-text">Plainsplain <span class="where">Personal prototype</span></span></a></li>
         <li><a href="#cs-commercial"><span class="ci-text">Proposals, bids and commercial strategy <span class="where">Consulting</span></span></a></li>
       </ol>
 
@@ -1241,7 +1243,45 @@ html:not(.hifi) .impact i:nth-child(n+2) { background: transparent; }
         <p class="back"><a href="#case-list">Back to case study list</a></p>
       </article>
 
-      <!-- 7 Commercial -->
+      <!-- 7 Plainsplain -->
+      <article class="case" id="cs-plainsplain" aria-labelledby="cs-plainsplain-title">
+        <header class="case-head">
+          <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-layout"/></svg></span>
+          <div>
+            <ul class="tags"><li class="tag tag--solid tag--zero">0 to 1</li><li class="tag tag--dashed">Prototype</li><li class="tag">Personal project</li></ul>
+            <h3 id="cs-plainsplain-title">Plainsplain</h3>
+            <p class="headline">One plain-English workspace for discovery, architecture and requirements.</p>
+          </div>
+        </header>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Product owner and builder, from concept to a working front end.</dd></div>
+          <div><dt>Try it</dt><dd><a href="https://rohitmandapalli.github.io/Plainsplain/">rohitmandapalli.github.io/Plainsplain</a></dd></div>
+        </dl>
+          <h4>The challenge</h4>
+          <p>Modernisation discovery is spread across workshops, slide decks, spreadsheets and diagrams. Requirements lose their link to the systems and evidence behind them.</p>
+          <h4>The approach</h4>
+        <figure class="viz">
+          <figcaption>Discovery-to-requirements workspace</figcaption>
+          <ol class="flow">
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><strong>Discover</strong><span>Purpose, users, volumes, data and NFRs</span></li>
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg><strong>Map</strong><span>System map of seven component groups</span></li>
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><strong>Prioritise</strong><span>MoSCoW requirements linked to components</span></li>
+            <li class="is-key"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-repeat"/></svg><strong>Test</strong><span>As-is versus to-be sandbox</span></li>
+            <li class="is-dashed"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cpu"/></svg><strong>AI layer</strong><span>Code ingestion and AI-drafted changes</span></li>
+          </ol>
+          <p class="viz-note">Solid steps are built. Dashed step is designed.</p>
+        </figure>
+        <ul class="list">
+          <li>Guided discovery, system map, process, product, UI, data dictionary and requirements views in one place.</li>
+          <li>Plain black-and-white design based on GOV.UK Design System patterns, with strong contrast and clear keyboard focus.</li>
+          <li>No backend: plain HTML, CSS and JavaScript, with project export and import as JSON.</li>
+        </ul>
+          <h4>The outcome</h4>
+          <p>A working, shareable concept, live to try, and a roadmap to an AI-native modernisation tool: code ingestion, evidence linking and AI-drafted changes under human control.</p>
+        <p class="back"><a href="#case-list">Back to case study list</a></p>
+      </article>
+
+      <!-- 8 Commercial -->
       <article class="case" id="cs-commercial" aria-labelledby="cs-com-title">
         <header class="case-head">
           <span class="case-icon" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-trending"/></svg></span>
@@ -1447,6 +1487,7 @@ html:not(.hifi) .impact i:nth-child(n+2) { background: transparent; }
       <ul class="link-list">
         <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg><span><strong><a href="https://rohitmandapalli.substack.com">AI Seeking vs Legacy Search</a></strong><br>Substack, 2026. AI-mediated commerce, product strategy and how consumers find things.</span></li>
         <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><span><strong><a href="https://billethegoat.lovable.app">Bille the Goat</a></strong><br>Live receipt-management prototype.</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg><span><strong><a href="https://rohitmandapalli.github.io/Plainsplain/">Plainsplain</a></strong><br>Live workspace prototype for discovery, architecture and requirements.</span></li>
         <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-code"/></svg><span><strong><a href="https://github.com/rohitmandapalli">GitHub</a></strong><br>Code and prototypes.</span></li>
       </ul>
       <p class="back"><a href="#top">Back to top</a></p>
@@ -1696,6 +1737,10 @@ html:not(.hifi) .impact i:nth-child(n+2) { background: transparent; }
       k: ['bille', 'goat', 'receipt', 'lovable', 'prototype', 'vibe coding', 'prompting'],
       a: 'Bille the Goat is his own GenAI receipt app, and it is live to try.\n- Built in Lovable by prompting and refining\n- Taken from idea to working prototype\n- Key insight: capture is the adoption bottleneck, so receipts must be easy to get in',
       links: [['#cs-bille', 'Bille case study'], ['https://billethegoat.lovable.app', 'Try the prototype']], next: ['technical', 'ai'] },
+    { id: 'plainsplain', q: 'What is Plainsplain?',
+      k: ['plainsplain', 'ontologic', 'discovery', 'architecture', 'requirements', 'moscow', 'modernisation', 'workspace', 'system map'],
+      a: 'Plainsplain is his own workspace prototype for discovery, architecture and requirements, and it is live to try.\n- Guided discovery, a system map and MoSCoW requirements in one place\n- As-is versus to-be sandbox\n- Black-and-white design based on GOV.UK Design System patterns\n- Next: code ingestion and AI-drafted changes under human control',
+      links: [['#cs-plainsplain', 'Plainsplain case study'], ['https://rohitmandapalli.github.io/Plainsplain/', 'Try the prototype']], next: ['bille', 'ai'] },
     { id: 'commercial', q: 'What commercial experience does he have?',
       k: ['rfp', 'bid', 'proposal', 'presales', 'pipeline', 'consulting', 'win', 'commercial', 'revenue', 'maturity', 'business development'],
       a: 'He brings consulting-level commercial experience.\n- $50M+ of RFP and proposal responses coordinated, with teams of up to 25\n- $18M of life sciences wins supported in one quarter\n- About $400K of pipeline from a digital maturity tool he created',
@@ -1706,7 +1751,7 @@ html:not(.hifi) .impact i:nth-child(n+2) { background: transparent; }
       links: [['#cs-ml', 'See how it was measured']], next: ['ops', 'tax'] },
     { id: 'ai', q: 'What AI work has Rohit delivered?',
       k: ['ai', 'genai', 'generative', 'llm', 'machine learning', 'ml', 'artificial intelligence', 'rag', 'responsible ai', 'human in the loop', 'ai experience'],
-      a: 'Delivered AI, plus newer GenAI work.\n- Live product: ML-assisted clinical document authoring for 4,000+ users, with human sign-off built in (80% faster, about $2M saved a year)\n- Discovery and Alpha: AI-assisted review for a UK regulator\n- Prototype: Bille the Goat, a GenAI receipt app\n- Proofs of concept: a health assistant and three hackathon wins',
+      a: 'Delivered AI, plus newer GenAI work.\n- Live product: ML-assisted clinical document authoring for 4,000+ users, with human sign-off built in (80% faster, about $2M saved a year)\n- Discovery and Alpha: AI-assisted review for a UK regulator\n- Prototypes: Bille the Goat, a GenAI receipt app, and Plainsplain, a discovery and requirements workspace\n- Proofs of concept: a health assistant and three hackathon wins',
       links: [['#cs-ml', 'ML authoring case study']], next: ['ml', 'regulator', 'gaps'] },
     { id: 'leadership', q: 'What team sizes has he led?',
       k: ['team', 'lead', 'led', 'manage', 'managed', 'leadership', 'people', 'size', 'stakeholder', 'headcount'],
